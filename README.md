@@ -4,7 +4,7 @@ mtk is clone keybord with trackball.
 
 - via firmware  [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)
 - via keyleyout [mtk64_via.json](mtk/mtk64_via.json)
-- via keyleyout(double ball) [mtk64_ｄｂ_via.json](mtk/mtk64_db_via.json)
+- via keyleyout(double ball) [mtk64_db_via.json](mtk/mtk64_db_via.json)
 - keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
 
 - [via firmware build guide](qmk_firmware/keyboards/mtk/)
