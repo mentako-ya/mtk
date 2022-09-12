@@ -21,7 +21,7 @@
     mtk/ qmk/
 
     $ cd qmk/keyboards
-    $ ln -s ../../keyball/qmk_firmware/keyboards/mtk mtk
+    $ ln -s ../../mtk/qmk_firmware/keyboards/mtk mtk
     $ ls mtk/
     drivers/  mtk/  lib/  readme.md
     $ cd ..
