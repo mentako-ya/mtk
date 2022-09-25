@@ -63,6 +63,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+void keyboard_post_init_user(void) {
+#ifdef CONSOLE_ENABLE
+	  debug_enable=false;
+	  debug_matrix=true;
+	  debug_keyboard=true;
+	  debug_mouse=true;
+#endif
+}
+
 #ifdef OLED_ENABLE
 
 #    include "lib/oledkit/oledkit.h"
@@ -70,5 +79,69 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
+}
+#endif
+
+// encoder logic
+#ifdef ENCODER_ENABLE
+
+enum encoder_number {
+    _1ST_ENC = 0,
+    _2ND_ENC,
+    _3RD_ENC,
+    _4TH_ENC,
+};
+
+bool encoder_update_user(uint8_t index, bool clockwise) {
+	keypos_t key;
+
+	switch (index) {
+	case _1ST_ENC:
+		if (clockwise) {
+			key.row = 0;
+			key.col = 2;
+		} else {
+			key.row = 0;
+			key.col = 1;
+		}
+		break;
+	case _2ND_ENC:
+		if (clockwise) {
+			key.row = 0;
+			key.col = 5;
+		} else {
+			key.row = 0;
+			key.col = 4;
+		}
+		break;
+	case _3RD_ENC:
+		if (clockwise) {
+			key.row = 5;
+			key.col = 4;
+		} else {
+			key.row = 5;
+			key.col = 5;
+		}
+		break;
+	case _4TH_ENC:
+		if (clockwise) {
+			key.row = 5;
+			key.col = 1;
+		} else {
+			key.row = 5;
+			key.col = 2;
+		}
+		break;
+	}
+	uint8_t layer = layer_switch_get_layer(key);
+	uint16_t keycode = keymap_key_to_keycode(layer, key);
+
+	tap_code16(keycode);
+
+#ifdef CONSOLE_ENABLE
+    uprintf("encoder_update_user: index: %u, clockwise: %u \n", index, clockwise);
+#endif
+
+	return true;
 }
 #endif

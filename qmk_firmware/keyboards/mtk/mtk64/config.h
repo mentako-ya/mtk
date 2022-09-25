@@ -36,6 +36,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_MASKED
 #define DEBOUNCE            5
 
+/* Rotary encoder */
+#ifdef ENCODER_ENABLE
+#define ENCODERS_PAD_A { B3, B6 }
+#define ENCODERS_PAD_B { B2, B5 }
+#define ENCODER_RESOLUTION 4
+#endif
+
 // Split parameters
 #define SOFT_SERIAL_PIN         D2
 #define SPLIT_HAND_MATRIX_GRID  F7, D7
