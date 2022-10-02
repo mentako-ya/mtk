@@ -38,8 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Rotary encoder */
 #ifdef ENCODER_ENABLE
-#define ENCODERS_PAD_A { B3, B6 }
-#define ENCODERS_PAD_B { B2, B5 }
+#define ENCODERS_PAD_A { B6, B3 }
+#define ENCODERS_PAD_B { B5, B2 }
 #define ENCODER_RESOLUTION 4
 #endif
 
