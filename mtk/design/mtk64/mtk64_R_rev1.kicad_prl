@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 31,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_nets": [],
@@ -61,11 +61,11 @@
       35,
       36
     ],
-    "visible_layers": "00010f0_80000001",
+    "visible_layers": "00010d0_80000001",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "KB62_R_rev1.kicad_prl",
+    "filename": "mtk64_R_rev1.kicad_prl",
     "version": 3
   },
   "project": {
