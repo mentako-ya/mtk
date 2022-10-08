@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/tools/keybords/KeyBall61/design_data/KiCad/KeyBall_Economy/KeyBall.kicad_sch</source>
+    <date/>
+    <tool>Eeschema (6.0.4-0)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>KeyBall</title>
+        <company/>
+        <rev/>
+        <date/>
+        <source>KeyBall.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL10A106KP8NNNC_C19702.pdf</datasheet>
+      <fields>
+        <field name="Description">10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</field>
+        <field name="LCSC">C19702</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C19702"/>
+      <property name="Description" value="10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d23ca5ac-bc4d-44a2-90ac-0b3eaa4af6f8</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1809301912_YAGEO-CC0603KRX7R9BB104_C14663.pdf</datasheet>
+      <fields>
+        <field name="Description">50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</field>
+        <field name="LCSC">C14663</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Description" value="50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7e5126a6-a576-4ec7-bf29-c475e48b8135</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.pdf</datasheet>
+      <fields>
+        <field name="Discription">CL05B104KO5NNNC</field>
+        <field name="LCSC">C1525</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="Discription" value="CL05B104KO5NNNC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27781fed-e359-4df1-a77e-4e7171ff3d4c</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19702</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C19702"/>
+      <property name="Discription" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a937b888-b53d-4097-92d2-22e1039dfcf5</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/1810191219_Samsung-Electro-Mechanics-CL10A106KP8NNNC_C19702.pdf</datasheet>
+      <fields>
+        <field name="Description">10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS</field>
+        <field name="LCSC">C19702</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C19702"/>
+      <property name="Description" value="10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c101e3e4-51f9-48c2-b293-c0914c6cfd90</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>50df8fa0-ee2a-4112-85b7-c22bb6e6d9c5</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ba386072-7f93-4c22-a868-1a61e234b358</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>33k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF3302TCE_C25779.pdf</datasheet>
+      <fields>
+        <field name="Description">0402WGF3302TCE</field>
+        <field name="LCSC">C25779</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25779"/>
+      <property name="Description" value="0402WGF3302TCE"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2ea61874-0056-4426-beb6-2a1de0b257c3</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>56k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF5602TCE_C25796.pdf</datasheet>
+      <fields>
+        <field name="Description">0402WGF5602TCE</field>
+        <field name="LCSC">C25796</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25796"/>
+      <property name="Description" value="0402WGF5602TCE"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>be120370-64a8-4598-8dfc-7bb0295a7da5</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Description">0201WMF1002TEE</field>
+        <field name="LCSC"> C25804</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value=" C25804"/>
+      <property name="Description" value="0201WMF1002TEE"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>28bac23f-0086-43c3-ac26-b0bb720784f5</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Description">0603WAF1002T5E</field>
+        <field name="LCSC">C25804</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25804"/>
+      <property name="Description" value="0603WAF1002T5E"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c2307e1e-f264-4b5b-8e19-e9f6d09cb199</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0603WAF0000T5E_C21189.pdf</datasheet>
+      <fields>
+        <field name="Description">1/10W Thick Film Resistors 75V ±1% -55℃~+155℃ 0mΩ 0603  Chip Resistor - Surface Mount ROHS</field>
+        <field name="LCSC">C21189</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C21189"/>
+      <property name="Description" value="1/10W Thick Film Resistors 75V ±1% -55℃~+155℃ 0mΩ 0603  Chip Resistor - Surface Mount ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8323d9a6-65f6-4a00-9df6-c754dd747ebf</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>39</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF390JT5E_C23154.pdf</datasheet>
+      <fields>
+        <field name="Description">1/10W Thick Film Resistors 75V ±1% ±200ppm/℃ -55℃~+155℃ 39Ω 0603  Chip Resistor - Surface Mount ROHS</field>
+        <field name="LCSC">C23154</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C23154"/>
+      <property name="Description" value="1/10W Thick Film Resistors 75V ±1% ±200ppm/℃ -55℃~+155℃ 39Ω 0603  Chip Resistor - Surface Mount ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0022a3fc-a777-49b3-b28d-e4f19df3c981</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0603WAF1002T5E_C25804.pdf</datasheet>
+      <fields>
+        <field name="Description">1/10W Thick Film Resistors 75V ±1% ±100ppm/℃ -55℃~+155℃ 10kΩ 0603 Chip Resistor - Surface Mount ROHS</field>
+        <field name="LCSC">C25804</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25804"/>
+      <property name="Description" value="1/10W Thick Film Resistors 75V ±1% ±100ppm/℃ -55℃~+155℃ 10kΩ 0603 Chip Resistor - Surface Mount ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f90fc1e7-367f-473c-99ac-7166ed76bac0</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0603WAF0000T5E_C21189.pdf</datasheet>
+      <fields>
+        <field name="Description">1/10W Thick Film Resistors 75V ±1% -55℃~+155℃ 0mΩ 0603 Chip Resistor - Surface Mount ROHS</field>
+        <field name="LCSC">C21189</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C21189"/>
+      <property name="Description" value="1/10W Thick Film Resistors 75V ±1% -55℃~+155℃ 0mΩ 0603 Chip Resistor - Surface Mount ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1beb1cbb-bdf9-480e-b141-4370a44fee15</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>TPS73601DBV</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>http://www.ti.com/cn/lit/gpn/tps736</datasheet>
+      <fields>
+        <field name="Description">58dB@(100Hz),37dB@(10kHz) 400mA 200mV@(400mA) Adjustable 1.2V~5.5V Positive 1 5.5V SOT-23-5  Linear Voltage Regulators (LDO) ROHS</field>
+        <field name="LCSC">C59200</field>
+      </fields>
+      <libsource lib="Regulator_Linear" part="TPS73601DBV" description="Cap free NMOS 400mA Low Drop Adjustable Out Regulator, SOT-23-5"/>
+      <property name="LCSC" value="C59200"/>
+      <property name="Description" value="58dB@(100Hz),37dB@(10kHz) 400mA 200mV@(400mA) Adjustable 1.2V~5.5V Positive 1 5.5V SOT-23-5  Linear Voltage Regulators (LDO) ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7a94e9d9-69e4-4e6f-9e30-49e371776587</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TXS0102DCU</value>
+      <footprint>Package_SO:VSSOP-8_2.3x2mm_P0.5mm</footprint>
+      <datasheet>http://www.ti.com/cn/lit/gpn/txs0102</datasheet>
+      <fields>
+        <field name="Description">1.65V~3.6V Open Drain，Push-pull 2.3V~5.5V -40℃~+85℃ Bi-Directional Automatic direction detection Voltage Levels 1 2 24Mbps VSSOP-8  Translators / Level Shifters ROHS</field>
+        <field name="LCSC">C53434</field>
+      </fields>
+      <libsource lib="Logic_LevelTranslator" part="TXS0102DCU" description="2-Bit Bidirectional Voltage-Level Shifter for Open-Drain and Push-Pull Application, VSSOP-8"/>
+      <property name="LCSC" value="C53434"/>
+      <property name="Description" value="1.65V~3.6V Open Drain，Push-pull 2.3V~5.5V -40℃~+85℃ Bi-Directional Automatic direction detection Voltage Levels 1 2 24Mbps VSSOP-8  Translators / Level Shifters ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59bf4a5f-1b55-47e8-bba5-6b49f0c2255c</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>TXS0102DCU</value>
+      <footprint>Package_SO:VSSOP-8_2.3x2mm_P0.5mm</footprint>
+      <datasheet>http://www.ti.com/cn/lit/gpn/txs0102</datasheet>
+      <fields>
+        <field name="Description">1.65V~3.6V Open Drain，Push-pull 2.3V~5.5V -40℃~+85℃ Bi-Directional Automatic direction detection Voltage Levels 1 2 24Mbps VSSOP-8  Translators / Level Shifters ROHS</field>
+        <field name="LCSC">C53434</field>
+      </fields>
+      <libsource lib="Logic_LevelTranslator" part="TXS0102DCU" description="2-Bit Bidirectional Voltage-Level Shifter for Open-Drain and Push-Pull Application, VSSOP-8"/>
+      <property name="LCSC" value="C53434"/>
+      <property name="Description" value="1.65V~3.6V Open Drain，Push-pull 2.3V~5.5V -40℃~+85℃ Bi-Directional Automatic direction detection Voltage Levels 1 2 24Mbps VSSOP-8  Translators / Level Shifters ROHS"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="KeyBall.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>63a3efcf-4f5c-4e37-b798-9dd565bbba63</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x01_Male">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x07_Male">
+      <description>Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x07_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Logic_LevelTranslator" part="TXS0102DCU">
+      <description>2-Bit Bidirectional Voltage-Level Shifter for Open-Drain and Push-Pull Application, VSSOP-8</description>
+      <docs>http://www.ti.com/lit/gpn/txs0102</docs>
+      <footprints>
+        <fp>VSSOP*2.3x2mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TXS0102DCU</field>
+        <field name="Footprint">Package_SO:VSSOP-8_2.3x2mm_P0.5mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/gpn/txs0102</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B2" type="bidirectional"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VCCA" type="power_in"/>
+        <pin num="4" name="A2" type="bidirectional"/>
+        <pin num="5" name="A1" type="bidirectional"/>
+        <pin num="6" name="OE" type="input"/>
+        <pin num="7" name="VCCB" type="power_in"/>
+        <pin num="8" name="B1" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="TPS73601DBV">
+      <description>Cap free NMOS 400mA Low Drop Adjustable Out Regulator, SOT-23-5</description>
+      <docs>http://www.ti.com/lit/ds/symlink/tps736.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS73601DBV</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/tps736.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="FB" type="input"/>
+        <pin num="5" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor" part="PMW3360DM-T2QU">
+      <fields>
+        <field name="Reference">U2</field>
+        <field name="Value">PMW3360DM-T2QU</field>
+        <field name="Footprint">Sensor:IC_PMW3360DM-T2QU</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="input"/>
+        <pin num="2" name="NC" type="input"/>
+        <pin num="3" name="VDDPIX" type="input"/>
+        <pin num="4" name="VDD" type="input"/>
+        <pin num="5" name="VDDIO" type="input"/>
+        <pin num="6" name="NC" type="input"/>
+        <pin num="7" name="NRESET" type="input"/>
+        <pin num="8" name="GND" type="input"/>
+        <pin num="9" name="MOTION" type="input"/>
+        <pin num="10" name="SCLK" type="input"/>
+        <pin num="11" name="MOSI" type="input"/>
+        <pin num="12" name="MISO" type="input"/>
+        <pin num="13" name="NCS" type="input"/>
+        <pin num="14" name="NC" type="input"/>
+        <pin num="15" name="LED_P" type="input"/>
+        <pin num="16" name="NC" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="Logic_LevelTranslator">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Logic_LevelTranslator.kicad_sym</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Regulator_Linear.kicad_sym</uri>
+    </library>
+    <library logical="Sensor">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Sensor.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/1.9V">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="OUT" pintype="power_out"/>
+      <node ref="U2" pin="3" pinfunction="VCCA" pintype="power_in"/>
+      <node ref="U2" pin="6" pinfunction="OE" pintype="input"/>
+      <node ref="U3" pin="3" pinfunction="VCCA" pintype="power_in"/>
+      <node ref="U3" pin="6" pinfunction="OE" pintype="input"/>
+    </net>
+    <net code="2" name="/5V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="IN" pintype="power_in"/>
+      <node ref="U1" pin="3" pinfunction="EN" pintype="input"/>
+      <node ref="U2" pin="7" pinfunction="VCCB" pintype="power_in"/>
+      <node ref="U3" pin="7" pinfunction="VCCB" pintype="power_in"/>
+    </net>
+    <net code="3" name="/MISO">
+      <node ref="U3" pin="4" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="/MISO_5">
+      <node ref="U3" pin="1" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="/MOSI">
+      <node ref="U3" pin="5" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/MOSI_5">
+      <node ref="U3" pin="8" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/NCS">
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="A2" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/NCS_5">
+      <node ref="U2" pin="1" pinfunction="B2" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/SCLK">
+      <node ref="U2" pin="5" pinfunction="A1" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/SCLK_5">
+      <node ref="U2" pin="8" pinfunction="B1" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="12" name="Net-(C3-Pad2)">
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="FB" pintype="input"/>
+    </net>
+    <net code="13" name="Net-(C5-Pad1)">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(R7-Pad2)">
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(R8-Pad2)">
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(R10-Pad2)">
+      <node ref="R10" pin="2" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2" pintype="passive"/>
+    </net>
+  </nets>
+</export>
