@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name "kbd")(type "KiCad")(uri "/Users/tools/git/foostan_kbd/kicad-footprints/kbd.pretty")(options "")(descr ""))
+  (lib (name "kbd_Hole")(type "KiCad")(uri "/Users/tools/git/Salicylic3_KiCAD_FootPrint/kbd_Hole.pretty")(options "")(descr ""))
+  (lib (name "kbd_Parts")(type "KiCad")(uri "/Users/tools/git/Salicylic3_KiCAD_FootPrint/kbd_Parts.pretty")(options "")(descr ""))
+  (lib (name "めんたこキー")(type "KiCad")(uri "/Users/tools/Pictures/めんたこキー.pretty")(options "")(descr ""))
+)
