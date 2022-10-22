@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT             mtk64
 
 // Key matrix parameters (duplex matrix)
-#define MATRIX_ROWS         (5 * 2)  // split keyboard
+#define MATRIX_ROWS         (6 * 2)  // split keyboard
 #define MATRIX_COLS         (4 * 2)  // duplex matrix
 #define MATRIX_ROW_PINS     { D4, C6, D7, E6, B4 }
 #define MATRIX_COL_PINS     { F4, F5, F6, F7 }

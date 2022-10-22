@@ -25,18 +25,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_universal(
     KC_ESC   , KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                                  KC_6     , KC_7     , KC_8     , KC_9     , KC_0     , KC_MINS  ,
-    KC_DEL   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                  KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_INT3  ,
-    KC_TAB   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                  KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , S(KC_7)  ,
+	KC_TAB   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                  KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_INT3  ,
+	KC_LCTL  , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                  KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , S(KC_7)  ,
     MO(1)    , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     , KC_RBRC  ,              KC_NUHS, KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RSFT  ,
-    _______  , KC_LCTL  , KC_LALT  , KC_LGUI,LT(1,KC_LANG2),LT(2,KC_SPC),LT(3,KC_LANG1),    KC_BSPC,LT(2,KC_ENT),LT(1,KC_LANG2),KC_RGUI, _______ , KC_RALT  , KC_PSCR
+	KC_LALT  , KC_LGUI  ,                  LT(1,KC_LANG2),LT(2,KC_SPC),                                KC_BSPC  , KC_ENT   ,                       KC_RALT  , KC_RCTL  ,
+                          _______  ,            _______  ,       LT(3,KC_LANG1),             _______ ,            _______  ,             _______ ,
+				      _______,_______,      _______,_______,     LT(3,KC_LANG1),             _______ ,        _______,_______,       _______,_______
   ),
 
   [1] = LAYOUT_universal(
     S(KC_ESC), S(KC_1)  , KC_LBRC  , S(KC_3)  , S(KC_4)  , S(KC_5)  ,                                  KC_EQL   , S(KC_6)  ,S(KC_QUOT), S(KC_8)  , S(KC_9)  ,S(KC_INT1),
-    S(KC_DEL), S(KC_Q)  , S(KC_W)  , S(KC_E)  , S(KC_R)  , S(KC_T)  ,                                  S(KC_Y)  , S(KC_U)  , S(KC_I)  , S(KC_O)  , S(KC_P)  ,S(KC_INT3),
-    S(KC_TAB), S(KC_A)  , S(KC_S)  , S(KC_D)  , S(KC_F)  , S(KC_G)  ,                                  S(KC_H)  , S(KC_J)  , S(KC_K)  , S(KC_L)  , KC_QUOT  , S(KC_2)  ,
+    S(KC_TAB), S(KC_Q)  , S(KC_W)  , S(KC_E)  , S(KC_R)  , S(KC_T)  ,                                  S(KC_Y)  , S(KC_U)  , S(KC_I)  , S(KC_O)  , S(KC_P)  ,S(KC_INT3),
+    S(KC_LCTL),S(KC_A)  , S(KC_S)  , S(KC_D)  , S(KC_F)  , S(KC_G)  ,                                  S(KC_H)  , S(KC_J)  , S(KC_K)  , S(KC_L)  , KC_QUOT  , S(KC_2)  ,
     _______  , S(KC_Z)  , S(KC_X)  , S(KC_C)  , S(KC_V)  , S(KC_B)  ,S(KC_RBRC),           S(KC_NUHS), S(KC_N)  , S(KC_M)  ,S(KC_COMM), S(KC_DOT),S(KC_SLSH),S(KC_RSFT),
-    _______  ,S(KC_LCTL),S(KC_LALT),S(KC_LGUI), _______  , _______  , _______  ,            _______  , _______  , _______  ,S(KC_RGUI), _______  , S(KC_RALT), _______
+    S(KC_LALT),S(KC_LGUI),                      _______  , _______  ,                                  _______  , _______  ,                      S(KC_RALT),S(KC_RCTL),
+                          _______  ,            _______  ,             _______,              _______ ,            _______  ,             _______ ,
+                      _______,_______,      _______,_______,           _______,              _______ ,        _______,_______,       _______,_______
   ),
 
   [2] = LAYOUT_universal(
@@ -44,16 +48,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  , _______  , KC_7     , KC_8     , KC_9     , _______  ,                                  _______  , KC_LEFT  , KC_UP    , KC_RGHT  , _______  , KC_F12   ,
     _______  , _______  , KC_4     , KC_5     , KC_6     ,S(KC_SCLN),                                  KC_PGUP  , KC_BTN1  , KC_DOWN  , KC_BTN2  , KC_BTN3  , _______  ,
     _______  , _______  , KC_1     , KC_2     , KC_3     ,S(KC_MINS), S(KC_8)  ,            S(KC_9)  , KC_PGDN  , _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , KC_0     , KC_DOT   , _______  , _______  , _______  ,             KC_DEL  , _______  , _______  , _______  , _______  , _______  , _______
+    _______  , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______,              _______ ,            _______  ,             _______ ,
+                      _______,_______,      _______,_______,           _______,              _______ ,        _______,_______,       _______,_______
   ),
 
   [3] = LAYOUT_universal(
     RGB_TOG  , _______  , _______  , _______  , _______  , _______  ,                                  RGB_M_P  , RGB_M_B  , RGB_M_R  , RGB_M_SW , RGB_M_SN , RGB_M_K  ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , _______  , _______  ,                                  RGB_M_X  , RGB_M_G  , RGB_M_T  , RGB_M_TW , _______  , _______  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , _______  , _______  ,                                  CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
-    _______  , _______  , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EEP_RST  ,            EEP_RST  , KC_HOME  , KC_PGDN  , KC_PGUP  , KC_END   , _______  , _______  ,
-    RESET    , _______  , KC_LEFT  , KC_DOWN  , KC_UP    , KC_RGHT  , _______  ,            _______  , KC_BSPC  , _______  , _______  , _______  , _______  , RESET
+    _______  , _______  , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EEP_RST  ,            EEP_RST  , _______  , _______  , _______  , _______  , _______  , _______  ,
+    RESET    , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______,              _______ ,            _______  ,             _______ ,
+                      _______,_______,      _______,_______,           _______,              _______ ,        _______,_______,       _______,_______
   ),
+
 };
 // clang-format on
 
@@ -98,38 +107,38 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	switch (index) {
 	case _1ST_ENC:
 		if (clockwise) {
-			key.row = 0;
-			key.col = 2;
+			key.row = 5;
+			key.col = 0;
 		} else {
-			key.row = 0;
+			key.row = 5;
 			key.col = 1;
 		}
 		break;
 	case _2ND_ENC:
 		if (clockwise) {
-			key.row = 0;
-			key.col = 5;
+			key.row = 5;
+			key.col = 2;
 		} else {
-			key.row = 0;
-			key.col = 4;
+			key.row = 5;
+			key.col = 3;
 		}
 		break;
 	case _3RD_ENC:
 		if (clockwise) {
-			key.row = 5;
-			key.col = 4;
+			key.row = 11;
+			key.col = 2;
 		} else {
-			key.row = 5;
-			key.col = 5;
+			key.row = 11;
+			key.col = 3;
 		}
 		break;
 	case _4TH_ENC:
 		if (clockwise) {
-			key.row = 5;
-			key.col = 1;
+			key.row = 11;
+			key.col = 0;
 		} else {
-			key.row = 5;
-			key.col = 2;
+			key.row = 11;
+			key.col = 1;
 		}
 		break;
 	}
