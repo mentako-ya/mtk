@@ -113,16 +113,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			E4L,E4R,  E3L,E3R,    L42,    R42,    E2L,E2R,  E1L,E1R          \
 	) \
     { \
-        {   L00,   L01,   L02, KC_NO,   L13,   L14,   L15, KC_NO }, \
-        {   L20,   L21,   L22,   E4P,   L23,   L24,   L25,   E3P }, \
+        {   L00,   L01,   L02, KC_NO,   L03,   L04,   L05, KC_NO }, \
+        {   L10,   L11,   L12,   E4P,   L13,   L14,   L15,   E3P }, \
+        {   L20,   L21,   L22, KC_NO,   L23,   L24,   L25, KC_NO }, \
         {   L30,   L31,   L32, KC_NO,   L33,   L34,   L35,   L36 }, \
-        {   L40,   L41, KC_NO,   L42,   L43, KC_NO,   L45,   L46 }, \
+        {   L40,   L41, KC_NO, KC_NO,   L42,   L43,   L45,   L46 }, \
         {   E4R,   E4L,   E3R,   E3L, KC_NO, KC_NO, KC_NO, KC_NO }, \
         {   R00,   R01,   R02, KC_NO,   R03,   R04,   R05, KC_NO }, \
         {   R10,   R11,   R12,   E1P,   R13,   R14,   R15,   E2P }, \
         {   R20,   R21,   R22, KC_NO,   R23,   R24,   R25, KC_NO }, \
         {   R30,   R31,   R32, KC_NO,   R33,   R34,   R35,   R36 }, \
-        {   R40,   R41, KC_NO, KC_NO,   R43, KC_NO,   R45,   R46 }, \
+        {   R40,   R41, KC_NO, KC_NO,   R42,   R43,   R45,   R46 }, \
         {   E1L,   E1R,   E2L,   E2R, KC_NO, KC_NO, KC_NO, KC_NO }  \
     }
 
