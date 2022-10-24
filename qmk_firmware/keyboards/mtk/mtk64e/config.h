@@ -24,9 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // USB Device descriptor parameters
 #define VENDOR_ID           0x4d59     // "MY" = Mentako_ya
 #define PRODUCT_ID          0x0100
-#define DEVICE_VER          0x0001
+#define DEVICE_VER          0x0002
 #define MANUFACTURER        Mentako_ya
-#define PRODUCT             mtk64
+#define PRODUCT             mtk64e
 
 // Key matrix parameters (duplex matrix)
 #define MATRIX_ROWS         (6 * 2)  // split keyboard
@@ -86,4 +86,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
-#define TRACKBALL_DRIVER_DISABLE
