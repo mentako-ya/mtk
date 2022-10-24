@@ -108,19 +108,19 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	case _1ST_ENC:
 		if (clockwise) {
 			key.row = 5;
-			key.col = 0;
+			key.col = 2;
 		} else {
 			key.row = 5;
-			key.col = 1;
+			key.col = 3;
 		}
 		break;
 	case _2ND_ENC:
 		if (clockwise) {
 			key.row = 5;
-			key.col = 2;
+			key.col = 0;
 		} else {
 			key.row = 5;
-			key.col = 3;
+			key.col = 1;
 		}
 		break;
 	case _3RD_ENC:
