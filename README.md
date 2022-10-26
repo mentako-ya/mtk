@@ -2,7 +2,10 @@
 
 mtk is clone keybord with trackball.
 
-- via firmware  [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)
+- via firmware  
+   [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)　　　　　　rev1基板用　右ボール/左ボール/左右ボール対応
+   [mtk_mtk64e_via.hex](mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール対応
+
 - [via firmware build guide](qmk_firmware/keyboards/mtk/)
 
 ## キーマップ変更
@@ -25,8 +28,9 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 4. Jsonファイルのアップロードを求められるので、下記からレイアウトに合わせたjsonファイルをダウンロードして使用する
 <img width="500" src="mtk/remap_img/remap_4.png">
 
-- 右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
-- 左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
+- ｍｔｋ６４　右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
+- ｍｔｋ６４　左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
+- ｍｔｋ６４e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](mtk/mtk64e_via.json)
 
 5. キーマップの変更 / キーマップの書き込み（右上Flashボタン） /　変更したキーマップの保存　/　キーマップのPDFダウンロード　などが可能
 
@@ -39,6 +43,11 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 - via keyleyout(double ball) [mtk64_db_via.json](mtk/mtk64_db_via.json)
 - sample keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
 <img alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
+
+左ロータリーエンコーダー、右ボールキーマップサンプル
+- via keyleyout(rotary encoder) [mtk64e_via.json](mtk/mtk64e_via.json)
+- sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
+<img alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
 
 ## 基本的な使用方法
 
@@ -69,10 +78,9 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 
 ## トラックボールのお手入れ
 ボールとボールケースの白い支持球はこまめに掃除していただくと、滑りがよくなり快適に使用できます。
+白い支持球周辺に埃が溜まりますので、時々ボールを外してメガネ拭きなどで掃除してください。
 
 特に、微調整が必要な細かい作業を行う場合、ボールの滑りが悪いと狙ったところをカーソルが飛び越してしまい、非常にストレスが溜まります。
 
-ボールケースの白い支持球周辺には埃が溜まります。時々ボールを外してメガネ拭きなどで掃除してください。
-
 ボールに[シリコンスプレー](https://www.amazon.co.jp/dp/B000TGHTF4)を少量塗布して、ティッシュ、メガネ拭き、[キムワイプ](https://www.amazon.co.jp/dp/B001EHI9XI)などで軽く拭っていただくと、劇的に滑りが良くなり、操作性が向上します。
-（シリコンスプレーは必須です）
+シリコンスプレーは1本あれば数年使用できます。
