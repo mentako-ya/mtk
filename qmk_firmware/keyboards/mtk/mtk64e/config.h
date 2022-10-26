@@ -24,17 +24,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // USB Device descriptor parameters
 #define VENDOR_ID           0x4d59     // "MY" = Mentako_ya
 #define PRODUCT_ID          0x0100
-#define DEVICE_VER          0x0001
+#define DEVICE_VER          0x0002
 #define MANUFACTURER        Mentako_ya
-#define PRODUCT             mtk64
+#define PRODUCT             mtk64e
 
 // Key matrix parameters (duplex matrix)
-#define MATRIX_ROWS         (5 * 2)  // split keyboard
+#define MATRIX_ROWS         (6 * 2)  // split keyboard
 #define MATRIX_COLS         (4 * 2)  // duplex matrix
 #define MATRIX_ROW_PINS     { D4, C6, D7, E6, B4 }
 #define MATRIX_COL_PINS     { F4, F5, F6, F7 }
 #define MATRIX_MASKED
 #define DEBOUNCE            5
+
+/* Rotary encoder */
+#ifdef ENCODER_ENABLE
+#define ENCODERS_PAD_A { B6, B3 }
+#define ENCODERS_PAD_B { B5, B2 }
+#define ENCODER_RESOLUTION 4
+#endif
 
 // Split parameters
 #define SOFT_SERIAL_PIN         D2
