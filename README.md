@@ -3,9 +3,16 @@
 mtk is clone keybord with trackball.
 
 - via、remap対応 ファームウェア  
-   [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)　rev1基板用　右ボール/左ボール/左右ボール対応
+   [mtk_mtk64_via.hex](attach:mtk/mtk_mtk64_via.hex)　rev1基板用　右ボール/左ボール/左右ボール対応
    
-   [mtk_mtk64e_via.hex](mtk/mtk_mtk64e_via.hex)　rev2基板用　左ロータリーエンコーダー、右ボール対応
+   [mtk_mtk64e_via.hex](attach:mtk/mtk_mtk64e_via.hex)　rev2基板用　左ロータリーエンコーダー、右ボール対応
+
+- via、remap用 via.json
+    mtk64　右ボール用 [mtk64_rb_via.json](attach:mtk/mtk64_via.json)
+    
+    mtk64　左右ボール用 [mtk64_db_via.json](attach:mtk/mtk64_db_via.json)
+    
+    mtk64e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](attach:mtk/mtk64e_via.json)
 
 - ご自身でファームウェアをカスタマイズ、ビルドする場合 
 
@@ -31,24 +38,24 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 4. Jsonファイルのアップロードを求められるので、下記からレイアウトに合わせたjsonファイルをダウンロードして使用する
 <img width="500" src="mtk/remap_img/remap_4.png">
 
-- mtk64　右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
-- mtk64　左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
-- mtk64e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](mtk/mtk64e_via.json)
+- mtk64　右ボール用 [mtk64_rb_via.json](attach:mtk/mtk64_via.json)
+- mtk64　左右ボール用 [mtk64_db_via.json](attach:mtk/mtk64_db_via.json)
+- mtk64e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](attach:mtk/mtk64e_via.json)
 
 5. キーマップの変更 / キーマップの書き込み（右上Flashボタン） /　変更したキーマップの保存　/　キーマップのPDFダウンロード　などが可能
 
 右ボールキーマップサンプル
-- via keyleyout(right ball) [mtk64_rb_via.json](mtk/mtk64_via.json)
+- via keyleyout(right ball) [mtk64_rb_via.json](attach:mtk/mtk64_via.json)
 - sample keymap cheetsheet(right ball) [mtk64_rb_keymap_cheatsheet.pdf](mtk/mtk64_rb_keymap_cheatsheet.pdf)
 <img width="1186" alt="remap_key_leyout" src="mtk/remap_img/mtk64_rb_keymap.png">
 
 左右ボールキーマップサンプル
-- via keyleyout(double ball) [mtk64_db_via.json](mtk/mtk64_db_via.json)
+- via keyleyout(double ball) [mtk64_db_via.json](attach:mtk/mtk64_db_via.json)
 - sample keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
 <img alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
 
 左ロータリーエンコーダー、右ボールキーマップサンプル
-- via keyleyout(rotary encoder) [mtk64e_via.json](mtk/mtk64e_via.json)
+- via keyleyout(rotary encoder) [mtk64e_via.json](attach:mtk/mtk64e_via.json)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
 <img alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
 
@@ -92,4 +99,5 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 特に、微調整が必要な細かい作業を行う場合、ボールの滑りが悪いと狙ったところをカーソルが飛び越してしまい、非常にストレスが溜まります。
 
 ボールに[シリコンスプレー](https://www.amazon.co.jp/dp/B000TGHTF4)を少量塗布して、ティッシュ、メガネ拭き、[キムワイプ](https://www.amazon.co.jp/dp/B001EHI9XI)などで軽く拭っていただくと、劇的に滑りが良くなり、操作性が向上します。
-シリコンスプレーは1本あれば数年使用できます。
+
+定期的にシリコンを塗布する必要がありますが、シリコンスプレーは1本あれば数年使用できます。
