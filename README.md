@@ -28,9 +28,9 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 4. Jsonファイルのアップロードを求められるので、下記からレイアウトに合わせたjsonファイルをダウンロードして使用する
 <img width="500" src="mtk/remap_img/remap_4.png">
 
-- ｍｔｋ６４　右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
-- ｍｔｋ６４　左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
-- ｍｔｋ６４e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](mtk/mtk64e_via.json)
+- mtk64　右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
+- mtk64　左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
+- mtk64e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](mtk/mtk64e_via.json)
 
 5. キーマップの変更 / キーマップの書き込み（右上Flashボタン） /　変更したキーマップの保存　/　キーマップのPDFダウンロード　などが可能
 
@@ -48,6 +48,10 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 - via keyleyout(rotary encoder) [mtk64e_via.json](mtk/mtk64e_via.json)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
 <img alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
+
+※ 製品出荷時点でキーボードに設定済みのマッピングは、ファームウェアのデフォルトキーマッピングとは一部異なります。
+　　　　キーマップのリセットや、キーボードの初期化を行うと、キーマップはファームウェアのデフォルトキーマップにリセットされます。
+  キーマップ変更やリセットを行う前に、初期のマッピングの状態でマップの保存をお勧めします。
 
 ## 基本的な使用方法
 
