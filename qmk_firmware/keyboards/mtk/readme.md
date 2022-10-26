@@ -32,4 +32,15 @@
     ```console
     $ make -j8 SKIP_GIT=yes mtk/mtk64:via
     ```
+    
+    Or build and flash firmware.
+    ```console
+    $ cd ~/git/qmk_firmware
+    $ qmk flash -kb mtk/mtk64 -km via
+    Ψ Compiling keymap with gmake --jobs=1 mtk/mtk64:via:flash
+    ~
+    Waiting for USB serial port - reset your controller now (Ctrl+C to cancel)..........
+    ```
+    Press the reset switch twice. then start flash firmware.
+   
 
