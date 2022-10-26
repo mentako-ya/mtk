@@ -8,11 +8,12 @@ mtk is clone keybord with trackball.
    [mtk_mtk64e_via.hex](mtk/mtk_mtk64e_via.hex)　rev2基板用　左ロータリーエンコーダー、右ボール対応
 
 - via、remap用 via.json
-    mtk64　右ボール用 [mtk64_rb_via.json](mtk/mtk64_via.json)
+
+    [mtk64_rb_via.json](mtk/mtk64_via.json) rev1 mtk64　右ボール用 
     
-    mtk64　左右ボール用 [mtk64_db_via.json](mtk/mtk64_db_via.json)
+    [mtk64_db_via.json](mtk/mtk64_db_via.json) rev1 mtk64　左右ボール用 
     
-    mtk64e　左ロータリーエンコーダー、右ボール用 [mtk64e_via.json](mtk/mtk64e_via.json)
+    [mtk64e_via.json](mtk/mtk64e_via.json) rev2 mtk64e　左ロータリーエンコーダー、右ボール/左右ロータリーエンコーダー用 
 
 - ご自身でファームウェアをカスタマイズ、ビルドする場合 
 
