@@ -25,7 +25,7 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 2. [+ KEYBORD]をクリック
 <img width="500" src="mtk/remap_img/remap_2.png">
 
-3. [mtk64] を選択して接続.
+3. [mtk64] か。[mtk64e]を選択して接続.
 <img width="250" src="mtk/remap_img/remap_3.png">
 
 4. Jsonファイルのアップロードを求められるので、下記からレイアウトに合わせたjsonファイルをダウンロードして使用する
