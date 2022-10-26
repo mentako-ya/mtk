@@ -2,11 +2,14 @@
 
 mtk is clone keybord with trackball.
 
-- via firmware  
-   [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)　　　　　　rev1基板用　右ボール/左ボール/左右ボール対応
-   [mtk_mtk64e_via.hex](mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール対応
+- via、remap対応 ファームウェア  
+   [mtk_mtk64_via.hex](mtk/mtk_mtk64_via.hex)　rev1基板用　右ボール/左ボール/左右ボール対応
+   
+   [mtk_mtk64e_via.hex](mtk/mtk_mtk64e_via.hex)　rev2基板用　左ロータリーエンコーダー、右ボール対応
 
-- [via firmware build guide](qmk_firmware/keyboards/mtk/)
+- ご自身でファームウェアをカスタマイズ、ビルドする場合 
+
+   [via firmware ビルドガイド](qmk_firmware/keyboards/mtk/)
 
 ## キーマップ変更
 
@@ -50,8 +53,10 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 <img alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
 
 ※ 製品出荷時点でキーボードに設定済みのマッピングは、ファームウェアのデフォルトキーマッピングとは一部異なります。
-　　　　キーマップのリセットや、キーボードの初期化を行うと、キーマップはファームウェアのデフォルトキーマップにリセットされます。
-  キーマップ変更やリセットを行う前に、初期のマッピングの状態でマップの保存をお勧めします。
+
+キーマップのリセットや、キーボードの初期化を行うと、キーマップはファームウェアのデフォルトキーマップにリセットされます。
+
+キーマップ変更やリセットを行う前に、初期のマッピングの状態でマップの保存をお勧めします。
 
 ## 基本的な使用方法
 
