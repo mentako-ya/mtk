@@ -1,0 +1,11 @@
+Comment,Designator,Footprint,LCSC
+"10uF","C1,C4,C5","Capacitor_SMD:C_0603_1608Metric","C19702"
+"100nF","C2,C6,C7","Capacitor_SMD:C_0603_1608Metric","C14663"
+"100nF","C3","Capacitor_SMD:C_0402_1005Metric","C1525"
+"33k","R1","Resistor_SMD:R_0402_1005Metric","C25779"
+"56k","R2","Resistor_SMD:R_0402_1005Metric","C25796"
+"10k","R4,R6,R10","Resistor_SMD:R_0603_1608Metric"," C25804"
+"0","R7,R11","Resistor_SMD:R_0603_1608Metric","C21189"
+"39","R8","Resistor_SMD:R_0603_1608Metric","C23154"
+"TPS73601DBV","U1","Package_TO_SOT_SMD:SOT-23-5","C59200"
+"TXS0102DCU","U2,U3","Package_SO:VSSOP-8_2.3x2mm_P0.5mm","C53434"
