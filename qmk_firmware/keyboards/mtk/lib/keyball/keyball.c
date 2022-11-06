@@ -122,7 +122,7 @@ void pointing_device_driver_init(void) {
 
 #ifdef ENCODER_ENABLE
     // The left keyboard uses an encoder to disable the trackball without initializing it.
-	if(is_keyboard_left()){
+	if(!is_keyboard_left()){
 		return ;
 	}
 #endif
