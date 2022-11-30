@@ -770,8 +770,8 @@
     (at 156.5 109.9)
     (descr "SOT, 5 Pin (https://www.jedec.org/sites/default/files/docs/Mo-178c.PDF variant AA), generated with kicad-footprint-generator ipc_gullwing_generator.py")
     (tags "SOT TO_SOT_SMD")
-    (property "Description" "58dB@(100Hz),37dB@(10kHz) 400mA 200mV@(400mA) Adjustable 1.2V~5.5V Positive 1 5.5V SOT-23-5  Linear Voltage Regulators (LDO) ROHS")
-    (property "LCSC" "C59200")
+    (property "Description" "SOT-23-5 Linear Voltage Regulators (LDO) ROHS")
+    (property "LCSC" "C2877852")
     (property "Sheetfile" "KeyBall.kicad_sch")
     (property "Sheetname" "")
     (path "/7a94e9d9-69e4-4e6f-9e30-49e371776587")
@@ -780,7 +780,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp f46f4b86-daf6-4869-98cb-928039f00f5f)
     )
-    (fp_text value "TPS73601DBV" (at 0 2.4) (layer "F.Fab") hide
+    (fp_text value "TLV75801PDBVR" (at 0 2.4) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b7e9cf10-b74e-4e80-a7f1-e33a29fe56de)
     )
