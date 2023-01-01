@@ -22,10 +22,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 // USB Device descriptor parameters
-#define VENDOR_ID           0x4d59     // "MY" = Mentako_ya
+#define VENDOR_ID           0x4d59     // "MY" = mentako_ya
 #define PRODUCT_ID          0x0100
 #define DEVICE_VER          0x0002
-#define MANUFACTURER        Mentako_ya
+#define MANUFACTURER        mentako_ya
 #define PRODUCT             mtk64e
 
 // Key matrix parameters (duplex matrix)
