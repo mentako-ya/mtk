@@ -172,7 +172,7 @@ static void motion_to_mouse_scroll(keyball_motion_t *m, report_mouse_t *r, bool 
     m->y -= y << div;
 
     // apply to mouse report.
-#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147
+#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147 || KEYBALL_MODEL == 44
     r->h = clip2int8(y);
     r->v = -clip2int8(x);
     if (is_left) {
@@ -291,8 +291,7 @@ static void rpc_get_info_invoke(void) {
 
 #    ifdef VIA_ENABLE
     // adjust VIA layout options according to current combination.
-//    uint8_t  layouts = (keyball.this_have_ball ? (is_keyboard_left() ? 0x02 : 0x01) : 0x00) | (keyball.that_have_ball ? (is_keyboard_left() ? 0x01 : 0x02) : 0x00);
-    uint8_t  layouts = 0x3;
+    uint8_t  layouts = (keyball.this_have_ball ? (is_keyboard_left() ? 0x02 : 0x01) : 0x00) | (keyball.that_have_ball ? (is_keyboard_left() ? 0x01 : 0x02) : 0x00);
     uint32_t curr    = via_get_layout_options();
     uint32_t next    = (curr & ~0x3) | layouts;
     if (next != curr) {
@@ -499,6 +498,11 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    // strip QK_MODS part.
+    if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
+        keycode &= 0xff;
+    }
+
     switch (keycode) {
 #ifndef MOUSEKEY_ENABLE
         // process KC_MS_BTN1~8 by myself
@@ -506,13 +510,14 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         case KC_MS_BTN1 ... KC_MS_BTN8: {
             extern void register_button(bool, enum mouse_buttons);
             register_button(record->event.pressed, MOUSE_BTN_MASK(keycode - KC_MS_BTN1));
-            return false;
+            // to apply QK_MODS actions, allow to process others.
+            return true;
+        }
 #endif
 
-            case SCRL_MO:
-                keyball_set_scroll_mode(record->event.pressed);
-                return false;
-        }
+        case SCRL_MO:
+            keyball_set_scroll_mode(record->event.pressed);
+            return false;
     }
 
     // process events which works on pressed only.
