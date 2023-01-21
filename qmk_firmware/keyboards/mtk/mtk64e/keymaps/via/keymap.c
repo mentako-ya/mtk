@@ -28,7 +28,7 @@ enum custom_keycodes {
     KC_TO_CLICKABLE_DEC,                  //0x5DB1
 };
 
-#ifdef AUTO_MOUSE_LEYER_ENABLE
+#ifdef AUTO_MOUSE_LAYER_ENABLE
 
 enum click_state {
     NONE = 0,
@@ -223,7 +223,7 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 }
 #endif
 
-#ifndef AUTO_MOUSE_LEYER_ENABLE
+#ifndef AUTO_MOUSE_LAYER_ENABLE
 void keyboard_post_init_user(void) {
     keybord_initialized = true;
 }
@@ -236,7 +236,7 @@ void keyboard_post_init_user(void) {
 void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
-#ifdef AUTO_MOUSE_LEYER_ENABLE
+#ifdef AUTO_MOUSE_LAYER_ENABLE
     oled_write_P(PSTR("Layer:"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(get_highest_layer(layer_state), ' '), user_config.tg_clickable_enabled);
     oled_write_P(PSTR(" MV:"), user_config.tg_clickable_enabled);
