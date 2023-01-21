@@ -20,11 +20,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 
+bool keybord_initialized = false;
+
 enum custom_keycodes {
     KC_TG_CLICKABLE = KEYBALL_SAFE_RANGE, //0x5DAF
     KC_TO_CLICKABLE_INC,                  //0x5DB0
     KC_TO_CLICKABLE_DEC,                  //0x5DB1
 };
+
+#ifdef AUTO_MOUSE_LEYER_ENABLE
 
 enum click_state {
     NONE = 0,
@@ -37,7 +41,6 @@ typedef union {
   struct {
 	bool tg_clickable_enabled;
     int16_t to_clickable_movement;
-    bool keybord_initialized;
   };
 } user_config_t;
 
@@ -58,13 +61,12 @@ void eeconfig_init_user(void) {
     user_config.raw = 0;
     user_config.tg_clickable_enabled = true;
     user_config.to_clickable_movement = 50;
-    user_config.keybord_initialized = false;
     eeconfig_update_user(user_config.raw);
 }
 
 void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
-    user_config.keybord_initialized = true;
+    keybord_initialized = true;
 }
 
 // クリック用のレイヤーを有効にする。　Enable layers for clicks
@@ -219,6 +221,13 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 
     return mouse_report;
 }
+#endif
+
+#ifndef AUTO_MOUSE_LEYER_ENABLE
+void keyboard_post_init_user(void) {
+    keybord_initialized = true;
+}
+#endif
 
 #ifdef OLED_ENABLE
 
@@ -227,13 +236,14 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
-    
+#ifdef AUTO_MOUSE_LEYER_ENABLE
     oled_write_P(PSTR("Layer:"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(get_highest_layer(layer_state), ' '), user_config.tg_clickable_enabled);
     oled_write_P(PSTR(" MV:"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(mouse_movement, ' '), user_config.tg_clickable_enabled);
     oled_write_P(PSTR("/"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(user_config.to_clickable_movement, ' '), user_config.tg_clickable_enabled);
+#endif
 }
 #endif
 
@@ -302,7 +312,7 @@ enum encoder_number {
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
 
-	if(user_config.keybord_initialized != true) {
+	if(keybord_initialized != true) {
 		return true;
 	}
 
