@@ -24,6 +24,7 @@ mtk is clone keybord with trackball.
    [via firmware ビルドガイド](qmk_firmware/keyboards/mtk/)
 
 ## 更新情報
+
 トラックボール操作時に自動的にマウスレイヤー2に切り替わる対応を追加しました。
 [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
 
@@ -130,7 +131,6 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 
 コード値については下記の表を参照してください。
 
-ファームウェア毎にキーコードが異なります。
 
 ### レイヤー３トラックボール設定のコード値　mtk64/mtk64e　（mtk_mtk64_via.hex/mtk_mtk64e_via.hex/mtk_mtk64e_AutoMouseLayer_via.hex）
 - 0x5DA5:トラックボール設定リセット

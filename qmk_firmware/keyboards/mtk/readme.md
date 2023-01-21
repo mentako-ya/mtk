@@ -27,15 +27,16 @@
     $ cd ..
     ```
 
-4. `make` your ktm via firmwares.
+4. `make` your mtk via firmwares.
 
     ```console
-    $ make -j8 SKIP_GIT=yes mtk/mtk64e:via
+    $ make -j8 SKIP_GIT=yes mtk/mtk64e:via:flash
     ```
     
     Or build and flash firmware.
     ```console
     $ cd ~/git/qmk_firmware
+    $ qmk claen -a
     $ qmk flash -kb mtk/mtk64e -km via
     Ψ Compiling keymap with gmake --jobs=1 mtk/mtk64e:via:flash
     ~
