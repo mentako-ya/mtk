@@ -18,8 +18,235 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
-
 #include "quantum.h"
+
+bool keybord_initialized = false;
+
+enum custom_keycodes {
+    KC_TG_CLICKABLE = KEYBALL_SAFE_RANGE, //0x5DAF
+    KC_TO_CLICKABLE_INC,                  //0x5DB0
+    KC_TO_CLICKABLE_DEC,                  //0x5DB1
+};
+
+#ifdef AUTO_MOUSE_LAYER_ENABLE
+
+enum click_state {
+    NONE = 0,
+    WAITING,    // マウスレイヤーが有効になるのを待つ。 Wait for mouse layer to activate.
+    CLICKABLE,  // マウスレイヤー有効になりクリック入力が取れる。 Mouse layer is enabled to take click input.
+};
+
+typedef union {
+  uint32_t raw;
+  struct {
+	bool tg_clickable_enabled;
+    int16_t to_clickable_movement;
+  };
+} user_config_t;
+
+user_config_t user_config;
+
+enum click_state state;     // 現在のクリック入力受付の状態 Current click input reception status
+uint16_t click_timer;       // タイマー。状態に応じて時間で判定する。 Timer. Time to determine the state of the system.
+
+// uint16_t to_clickable_time = 50;   // この秒数(千分の一秒)、WAITING状態ならクリックレイヤーが有効になる。  For this number of seconds (milliseconds), if in WAITING state, the click layer is activated.
+uint16_t to_reset_time = 1000; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
+
+const uint16_t normal_layer = 0;   // 初期レイヤー　初期レイヤー以外でマウス操作した場合、レイヤーの自動切り替えをしない。
+const uint16_t click_layer = 2;   // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
+
+int16_t mouse_movement;
+
+void eeconfig_init_user(void) {
+    user_config.raw = 0;
+    user_config.tg_clickable_enabled = true;
+    user_config.to_clickable_movement = 50;
+    eeconfig_update_user(user_config.raw);
+}
+
+void keyboard_post_init_user(void) {
+    user_config.raw = eeconfig_read_user();
+    keybord_initialized = true;
+}
+
+// クリック用のレイヤーを有効にする。　Enable layers for clicks
+void enable_click_layer(void) {
+    layer_on(click_layer);
+    click_timer = timer_read();
+    state = CLICKABLE;
+}
+
+// クリック用のレイヤーを無効にする。 Disable layers for clicks.
+void disable_click_layer(void) {
+    state = NONE;
+    layer_off(click_layer);
+}
+
+// 自前の絶対数を返す関数。 Functions that return absolute numbers.
+int16_t my_abs(int16_t num) {
+    if (num < 0) {
+        num = -num;
+    }
+
+    return num;
+}
+
+// 自前の符号を返す関数。 Function to return the sign.
+int16_t mmouse_move_y_sign(int16_t num) {
+    if (num < 0) {
+        return -1;
+    }
+
+    return 1;
+}
+
+// 現在クリックが可能な状態か。 Is it currently clickable?
+bool is_clickable_mode(void) {
+    return state == CLICKABLE;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    
+    switch (keycode) {
+
+        case KC_TG_CLICKABLE:
+            if (record->event.pressed) {
+            	user_config.tg_clickable_enabled = !user_config.tg_clickable_enabled;
+            }
+            return false;
+        
+        case KC_TO_CLICKABLE_INC:
+            if (record->event.pressed) {
+                user_config.to_clickable_movement += 5; // user_config.to_clickable_time += 10;
+                eeconfig_update_user(user_config.raw);
+            }
+            return false;
+
+        case KC_TO_CLICKABLE_DEC:
+            if (record->event.pressed) {
+
+                user_config.to_clickable_movement -= 5; // user_config.to_clickable_time -= 10;
+
+                if (user_config.to_clickable_movement < 5)
+                {
+                    user_config.to_clickable_movement = 5;
+                }
+
+                // if (user_config.to_clickable_time < 10) {
+                //     user_config.to_clickable_time = 10;
+                // }
+
+                eeconfig_update_user(user_config.raw);
+            }
+            return false;
+
+         default:
+            if  (record->event.pressed) {
+
+                if (state == CLICKABLE)
+                {
+                	// CLICKABLEの状態でクリックした場合、CLICKABLEを延長
+                    enable_click_layer();
+                }
+
+            }
+        
+    }
+   
+    return true;
+}
+
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+
+    if (mouse_report.x != 0 || mouse_report.y != 0) {
+        
+        switch (state) {
+            case CLICKABLE:
+                click_timer = timer_read();
+                break;
+
+            case WAITING:
+                /*
+                if (timer_elapsed(click_timer) > user_config.to_clickable_time) {
+                    enable_click_layer();
+                }
+                */
+            	if (user_config.tg_clickable_enabled == false){
+            		// CLICKABLE無効
+            		break;
+            	}
+
+            	if (normal_layer != get_highest_layer(layer_state)){
+            		// CLICKABLEになる前から初期レイヤー以外になっている場合、CLICKABLEにしない
+            		 break;
+            	}
+
+                mouse_movement += my_abs(mouse_report.x) + my_abs(mouse_report.y);
+
+                if (mouse_movement >= user_config.to_clickable_movement)
+                {
+                    mouse_movement = 0;
+                    enable_click_layer();
+                }
+                break;
+
+            default:
+                click_timer = timer_read();
+                state = WAITING;
+                mouse_movement = 0;
+        }
+    }
+    else
+    {
+        switch (state) {
+            case CLICKABLE:
+                if (timer_elapsed(click_timer) > to_reset_time) {
+                    disable_click_layer();
+                }
+                break;
+
+            case WAITING:
+                if (timer_elapsed(click_timer) > 50) {
+                    mouse_movement = 0;
+                    state = NONE;
+                }
+                break;
+
+            default:
+                mouse_movement = 0;
+                state = NONE;
+        }
+    }
+
+    return mouse_report;
+}
+#endif
+
+#ifndef AUTO_MOUSE_LAYER_ENABLE
+void keyboard_post_init_user(void) {
+    keybord_initialized = true;
+}
+#endif
+
+#ifdef OLED_ENABLE
+
+#    include "lib/oledkit/oledkit.h"
+
+void oledkit_render_info_user(void) {
+    keyball_oled_render_keyinfo();
+    keyball_oled_render_ballinfo();
+#ifdef AUTO_MOUSE_LAYER_ENABLE
+    oled_write_P(PSTR("Layer:"), user_config.tg_clickable_enabled);
+    oled_write(get_u8_str(get_highest_layer(layer_state), ' '), user_config.tg_clickable_enabled);
+    oled_write_P(PSTR(" MV:"), user_config.tg_clickable_enabled);
+    oled_write(get_u8_str(mouse_movement, ' '), user_config.tg_clickable_enabled);
+    oled_write_P(PSTR("/"), user_config.tg_clickable_enabled);
+    oled_write(get_u8_str(user_config.to_clickable_movement, ' '), user_config.tg_clickable_enabled);
+#endif
+}
+#endif
+
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -57,8 +284,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_TOG  , _______  , _______  , _______  , _______  , _______  ,                                  RGB_M_P  , RGB_M_B  , RGB_M_R  , RGB_M_SW , RGB_M_SN , RGB_M_K  ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , _______  , _______  ,                                  RGB_M_X  , RGB_M_G  , RGB_M_T  , RGB_M_TW , _______  , _______  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , _______  , _______  ,                                  CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
-    _______  , _______  , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EEP_RST  ,            EEP_RST  , _______  , _______  , _______  , _______  , _______  , _______  ,
-    RESET    , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+	KC_TO_CLICKABLE_INC ,
+	KC_TO_CLICKABLE_DEC , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EEP_RST ,              EEP_RST , _______  , _______  , _______  , _______  , _______  , _______  ,
+	RESET    , KC_TG_CLICKABLE ,                _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
                           _______  ,            _______  ,             _______,              _______ ,            _______  ,             _______ ,
                       _______,_______,      _______,_______,           _______,              _______ ,        _______,_______,       _______,_______
   ),
@@ -73,27 +301,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
     return state;
 }
-
-void keyboard_post_init_user(void) {
-    keybord_initialized = true;
-    
-#ifdef CONSOLE_ENABLE
-	  debug_enable=false;
-	  debug_matrix=true;
-	  debug_keyboard=true;
-	  debug_mouse=true;
-#endif
-}
-
-#ifdef OLED_ENABLE
-
-#    include "lib/oledkit/oledkit.h"
-
-void oledkit_render_info_user(void) {
-    keyball_oled_render_keyinfo();
-    keyball_oled_render_ballinfo();
-}
-#endif
 
 // encoder logic
 #ifdef ENCODER_ENABLE

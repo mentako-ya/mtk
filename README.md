@@ -7,6 +7,8 @@ mtk is clone keybord with trackball.
    
    [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
    
+   [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+   
    [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
 
 - via、remap用 via.json
@@ -22,6 +24,13 @@ mtk is clone keybord with trackball.
    [via firmware ビルドガイド](qmk_firmware/keyboards/mtk/)
 
 ## 更新情報
+
+トラックボール操作時に自動的にマウスレイヤー2に切り替わる対応を追加しました。
+[mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
+
+※容量の都合でこちらのファームウェアはLEDエフェクトを省略しています。（LEDのOn/Off、色と明るさ調整は可能、点滅やグラデーションは不可）
+LEDエフェクトが必要な場合、従来のファームウェアをご利用ください。
+
 通電直後のエンコーダー誤作動対応を追加しました。
 
 バックプレートが透明アクリル製になりました。
@@ -92,12 +101,13 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 左右ボール　キーマップサンプル
 - via keyleyout(double ball) [mtk64_db_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_db_via.json)
 - sample keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
-<img alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
+<img width="1186" alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
 
 ロータリーエンコーダー＆ボール　キーマップサンプル
 - via keyleyout(rotary encoder) [mtk64e_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64e_via.json)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
-<img alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
+- sample keymap cheetsheet(rotary encoder) [mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf](mtk/mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf)
+<img width="1186" alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
 
 ※ 製品出荷時点でキーボードに設定済みのマッピングは、ファームウェアのデフォルトキーマッピングとは一部異なります。
 
@@ -122,7 +132,7 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 コード値については下記の表を参照してください。
 
 
-### レイヤー３トラックボール設定のコード値　mtk64/mtk64e　（mtk_mtk64_via.hex／mtk_mtk64e_via.hex）
+### レイヤー３トラックボール設定のコード値　mtk64/mtk64e　（mtk_mtk64_via.hex/mtk_mtk64e_via.hex/mtk_mtk64e_AutoMouseLayer_via.hex）
 - 0x5DA5:トラックボール設定リセット
 - 0x5DA6:トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
 - 0x5DA7:トラックボールのカーソル速度 -1000
@@ -134,6 +144,11 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 - 0x5DAD:トラックボールのスクロール速度を下げる
 - 0x5DAE:トラックボールのスクロール速度を上げる
 
+### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e　（mtk_mtk64e_AutoMouseLayer_via.hex）
+- 0x5DAF:自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
+- 0x5DB0:自動マウスレイヤー切替距離 +
+- 0x5DB1:自動マウスレイヤー切替距離 -
+ 
 ## 左右トラックボール構成の動作
 左右トラックボール構成で使用する場合、USBケーブルを挿した側（Master)がトラックボール、反対側（Slave)がマウスホイール（上下左右）になります。
 
