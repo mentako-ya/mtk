@@ -117,6 +117,19 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 
 キーマップ変更やリセットを行う前に、初期のマッピングの状態でマップの保存をお勧めします。
 
+## ファームウェア更新
+[Pro Micro Web Updater](https://sekigon-gonnoc.github.io/promicro-web-updater/index.html) を使用してファームウェアを更新できます。
+
+事前に書き込まれているファームウェアは[mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)になります。　
+
+[Pro Micro Web Updater](https://sekigon-gonnoc.github.io/promicro-web-updater/index.html) にアクセスし、事前にダウンロードしたファームウェアをアップロードします。
+
+キーボードの左右どちらか一方をUSB接続し、画面上の[flash]ボタンを押下します。
+
+シリアルポートへの接続要求のウインドウが表示されるので、OLED斜め下のリセットスイッチ（ボルトの頭）を２回連続でクリックします。
+
+シリアルポートの一覧に「Pro Micro 5v」が表示されるので、選択して接続ボタンを押下します。
+
 ## 基本的な使用方法
 
 本キーボードは、レイヤー０〜3の４種類のキーマップを切り替えて使用します。
