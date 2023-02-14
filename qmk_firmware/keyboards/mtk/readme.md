@@ -36,7 +36,7 @@
     Or build and flash firmware.
     ```console
     $ cd ~/git/qmk_firmware
-    $ qmk claen -a
+    $ qmk clean -a
     $ qmk flash -kb mtk/mtk64e -km via
     Ψ Compiling keymap with gmake --jobs=1 mtk/mtk64e:via:flash
     ~
