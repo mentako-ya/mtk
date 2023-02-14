@@ -26,6 +26,8 @@ enum custom_keycodes {
     KC_TG_CLICKABLE = KEYBALL_SAFE_RANGE, //0x5DAF
     KC_TO_CLICKABLE_INC,                  //0x5DB0
     KC_TO_CLICKABLE_DEC,                  //0x5DB1
+    KC_TO_RESET_INC,                      //0x5DB2
+    KC_TO_RESET_DEC,                      //0x5DB3
 };
 
 #ifdef AUTO_MOUSE_LAYER_ENABLE
@@ -37,10 +39,11 @@ enum click_state {
 };
 
 typedef union {
-  uint32_t raw;
+  uint64_t raw;
   struct {
 	bool tg_clickable_enabled;
     int16_t to_clickable_movement;
+    int16_t to_reset_time;
   };
 } user_config_t;
 
@@ -48,10 +51,6 @@ user_config_t user_config;
 
 enum click_state state;     // 現在のクリック入力受付の状態 Current click input reception status
 uint16_t click_timer;       // タイマー。状態に応じて時間で判定する。 Timer. Time to determine the state of the system.
-
-// uint16_t to_clickable_time = 50;   // この秒数(千分の一秒)、WAITING状態ならクリックレイヤーが有効になる。  For this number of seconds (milliseconds), if in WAITING state, the click layer is activated.
-uint16_t to_reset_time = 1000; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
-
 const uint16_t normal_layer = 0;   // 初期レイヤー　初期レイヤー以外でマウス操作した場合、レイヤーの自動切り替えをしない。
 const uint16_t click_layer = 2;   // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
 
@@ -61,6 +60,7 @@ void eeconfig_init_user(void) {
     user_config.raw = 0;
     user_config.tg_clickable_enabled = true;
     user_config.to_clickable_movement = 50;
+    user_config.to_reset_time = 10;
     eeconfig_update_user(user_config.raw);
 }
 
@@ -112,6 +112,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_TG_CLICKABLE:
             if (record->event.pressed) {
             	user_config.tg_clickable_enabled = !user_config.tg_clickable_enabled;
+                eeconfig_update_user(user_config.raw);
             }
             return false;
         
@@ -124,23 +125,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case KC_TO_CLICKABLE_DEC:
             if (record->event.pressed) {
-
                 user_config.to_clickable_movement -= 5; // user_config.to_clickable_time -= 10;
-
                 if (user_config.to_clickable_movement < 5)
                 {
                     user_config.to_clickable_movement = 5;
                 }
-
-                // if (user_config.to_clickable_time < 10) {
-                //     user_config.to_clickable_time = 10;
-                // }
-
                 eeconfig_update_user(user_config.raw);
             }
             return false;
 
-         default:
+        case KC_TO_RESET_INC:
+            if (record->event.pressed) {
+                user_config.to_reset_time += 1;
+                if (user_config.to_reset_time > 999)
+                {
+                    user_config.to_reset_time = 999;
+                }
+                eeconfig_update_user(user_config.raw);
+            }
+            return false;
+
+        case KC_TO_RESET_DEC:
+            if (record->event.pressed) {
+                user_config.to_reset_time -= 1;
+                if (user_config.to_reset_time < 1)
+                {
+                    user_config.to_reset_time = 1;
+                }
+                eeconfig_update_user(user_config.raw);
+            }
+            return false;
+
+        default:
             if  (record->event.pressed) {
 
                 if (state == CLICKABLE)
@@ -201,7 +217,7 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     {
         switch (state) {
             case CLICKABLE:
-                if (timer_elapsed(click_timer) > to_reset_time) {
+                if (timer_elapsed(click_timer) > (user_config.to_reset_time * 100)) {
                     disable_click_layer();
                 }
                 break;
@@ -237,12 +253,14 @@ void oledkit_render_info_user(void) {
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
 #ifdef AUTO_MOUSE_LAYER_ENABLE
-    oled_write_P(PSTR("Layer:"), user_config.tg_clickable_enabled);
+    oled_write_P(PSTR("L:"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(get_highest_layer(layer_state), ' '), user_config.tg_clickable_enabled);
-    oled_write_P(PSTR(" MV:"), user_config.tg_clickable_enabled);
+    oled_write_P(PSTR("MV:"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(mouse_movement, ' '), user_config.tg_clickable_enabled);
     oled_write_P(PSTR("/"), user_config.tg_clickable_enabled);
     oled_write(get_u8_str(user_config.to_clickable_movement, ' '), user_config.tg_clickable_enabled);
+    oled_write_P(PSTR("RT:"), user_config.tg_clickable_enabled);
+    oled_write(get_u8_str(user_config.to_reset_time, ' '), user_config.tg_clickable_enabled);
 #endif
 }
 #endif
@@ -283,9 +301,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   LAYOUT_universal(
     RGB_TOG  , _______  , _______  , _______  , _______  , _______  ,                                  RGB_M_P  , RGB_M_B  , RGB_M_R  , RGB_M_SW , RGB_M_SN , RGB_M_K  ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , _______  , _______  ,                                  RGB_M_X  , RGB_M_G  , RGB_M_T  , RGB_M_TW , _______  , _______  ,
-    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , _______  , _______  ,                                  CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
-	KC_TO_CLICKABLE_INC ,
-	KC_TO_CLICKABLE_DEC , SCRL_DVD , SCRL_DVI , SCRL_MO  , SCRL_TO  , EEP_RST ,              EEP_RST , _______  , _______  , _______  , _______  , _______  , _______  ,
+    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_MO  , SCRL_TO  ,                                  CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE , KBC_RST  ,
+	KC_TO_CLICKABLE_INC , KC_TO_CLICKABLE_DEC ,
+	KC_TO_RESET_INC     , KC_TO_RESET_DEC     , SCRL_DVD , SCRL_DVI , EEP_RST ,              EEP_RST , _______  , _______  , _______  , _______  , _______  , _______  ,
 	RESET    , KC_TG_CLICKABLE ,                _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
                           _______  ,            _______  ,             _______,              _______ ,            _______  ,             _______ ,
                       _______,_______,      _______,_______,           _______,              _______ ,        _______,_______,       _______,_______
