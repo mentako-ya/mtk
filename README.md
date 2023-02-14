@@ -24,24 +24,28 @@ mtk is clone keybord with trackball.
    [via firmware ビルドガイド](qmk_firmware/keyboards/mtk/)
 
 ## 更新情報
+#### 自動マウスレイヤーから元のレイヤーに戻る時間を0.1秒単位で調整可能にしました。
+調整用カスタムキーコード
+- KC_TO_RESET_INC　0x5DB2
+- KC_TO_RESET_DEC　0x5DB3
 
-[takashicompanyさんの実装](https://zenn.dev/takashicompany/articles/69b87160cda4b9)を参考に、
-トラックボール操作時に自動でマウスレイヤー2に切り替わる対応を追加しました。
+#### トラックボール操作時に自動でマウスレイヤー2に切り替わる対応を追加しました。
+[takashicompanyさんの実装](https://zenn.dev/takashicompany/articles/69b87160cda4b9)を参考にしています。
 
 [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
 
 ※容量の都合でこちらのファームウェアはLEDエフェクトを省略しています。（LEDのOn/Off、色と明るさ調整は可能、点滅やグラデーションは不可）
 LEDエフェクトが必要な場合、従来のファームウェアをご利用ください。
 
-通電直後のエンコーダー誤作動対応を追加しました。
+#### 通電直後のエンコーダー誤作動対応を追加しました。
 
-バックプレートが透明アクリル製になりました。
+#### バックプレートが透明アクリル製になりました。
 
-バックプレート固定用の低頭6角穴付きボルトの付け外しには[T5サイズのレンチ](https://amzn.asia/d/b8Xeegc)を使用します。
+#### バックプレート固定用の低頭6角穴付きボルトの付け外しには[T5サイズのレンチ](https://amzn.asia/d/b8Xeegc)を使用します。
 
-メインの基板が黒色になりました。
+#### メインの基板が黒色になりました。
 
-親指のロープロファイルキーの向きを内向きに変更しました。
+#### 親指のロープロファイルキーの向きを内向きに変更しました。
 [MCC-profile POM Choc keycap](https://shop.yushakobo.jp/products/3694)のような、シリンドリカル（円柱状に凹んでいる形状）のキーを使用できます。
 
 [MBK Choc Low-Profile Keycaps](https://shop.yushakobo.jp/products/mbk-choc-low-profile-keycaps)のような、スフィリカル（お椀状に凹んでいる形状）のキーでは手前側の角が親指に当たって痛くなってしまう方におすすめです。
