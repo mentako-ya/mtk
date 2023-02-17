@@ -23,13 +23,17 @@ mtk is clone keybord with trackball.
 
    [via firmware ビルドガイド](qmk_firmware/keyboards/mtk/)
 
+
 ## 更新情報
-#### 自動マウスレイヤーから元のレイヤーに戻る時間を0.1秒単位で調整可能にしました。
+### エンコーダーの解像度を調整しました。
+[エンコーダーの仕様](https://tech.alpsalpine.com/j/products/detail/EC11E18244AU/#ancFig3)に合わせて、'ENCODER_RESOLUTION 4 → 2' に調整しました。
+
+### 自動マウスレイヤーから元のレイヤーに戻る時間を0.1秒単位で調整可能にしました。
 調整用カスタムキーコード
 - KC_TO_RESET_INC　0x5DB2
 - KC_TO_RESET_DEC　0x5DB3
 
-#### トラックボール操作時に自動でマウスレイヤー2に切り替わる対応を追加しました。
+### トラックボール操作時に自動でマウスレイヤー2に切り替わる対応を追加しました。
 [takashicompanyさんの実装](https://zenn.dev/takashicompany/articles/69b87160cda4b9)を参考にしています。
 
 [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
@@ -37,18 +41,19 @@ mtk is clone keybord with trackball.
 ※容量の都合でこちらのファームウェアはLEDエフェクトを省略しています。（LEDのOn/Off、色と明るさ調整は可能、点滅やグラデーションは不可）
 LEDエフェクトが必要な場合、従来のファームウェアをご利用ください。
 
-#### 通電直後のエンコーダー誤作動対応を追加しました。
+### 通電直後のエンコーダー誤作動対応を追加しました。
 
-#### バックプレートが透明アクリル製になりました。
+### バックプレートが透明アクリル製になりました。
 
-#### バックプレート固定用の低頭6角穴付きボルトの付け外しには[T5サイズのレンチ](https://amzn.asia/d/b8Xeegc)を使用します。
+### バックプレート固定用の低頭6角穴付きボルトの付け外しには[T5サイズのレンチ](https://amzn.asia/d/b8Xeegc)を使用します。
 
-#### メインの基板が黒色になりました。
+### メインの基板が黒色になりました。
 
-#### 親指のロープロファイルキーの向きを内向きに変更しました。
+### 親指のロープロファイルキーの向きを内向きに変更しました。
 [MCC-profile POM Choc keycap](https://shop.yushakobo.jp/products/3694)のような、シリンドリカル（円柱状に凹んでいる形状）のキーを使用できます。
 
 [MBK Choc Low-Profile Keycaps](https://shop.yushakobo.jp/products/mbk-choc-low-profile-keycaps)のような、スフィリカル（お椀状に凹んでいる形状）のキーでは手前側の角が親指に当たって痛くなってしまう方におすすめです。
+
 
 ## キーボードの接続
 
@@ -121,6 +126,7 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 
 キーマップ変更やリセットを行う前に、初期のマッピングの状態でマップの保存をお勧めします。
 
+
 ## ファームウェア更新
 [Pro Micro Web Updater](https://sekigon-gonnoc.github.io/promicro-web-updater/index.html) を使用してファームウェアを更新できます。
 
@@ -133,6 +139,7 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 シリアルポートへの接続要求のウインドウが表示されるので、OLED斜め下のリセットスイッチ（ボルトの頭）を２回連続でクリックします。
 
 シリアルポートの一覧に「Pro Micro 5v」が表示されるので、選択して接続ボタンを押下します。
+
 
 ## 基本的な使用方法
 
@@ -149,6 +156,7 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 デフォルトでは１秒間何も操作しないとレイヤー0に戻ります。
 自動マウスレイヤー切替機能がOnの場合、OLED３行目が反転表示されます。
 （レイヤー３左側のキーボード最下段左から２番目のキーで自動切替機能On／Off）
+
 
 ## レイヤー３トラックボール設定のコード値
 レイヤー３にマッピングされているキーのうち、トラックボールの設定を行うキーは、１６進数のカスタムコードで設定します。

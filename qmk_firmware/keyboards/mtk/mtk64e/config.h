@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef ENCODER_ENABLE
 #define ENCODERS_PAD_A { B6, B3 }
 #define ENCODERS_PAD_B { B5, B2 }
-#define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTION 2
 #endif
 
 // Split parameters
