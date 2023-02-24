@@ -49,8 +49,8 @@ typedef union {
 
 user_config_t user_config;
 
-enum click_state state;     // 現在のクリック入力受付の状態 Current click input reception status
-uint16_t click_timer;       // タイマー。状態に応じて時間で判定する。 Timer. Time to determine the state of the system.
+enum click_state clstate;     // 現在のクリック入力受付の状態 Current click input reception status
+uint16_t click_timer;       // タイマー。状態に応じて時間で判定する。 Timer. Time to determine the clstate of the system.
 const uint16_t normal_layer = 0;   // 初期レイヤー　初期レイヤー以外でマウス操作した場合、レイヤーの自動切り替えをしない。
 const uint16_t click_layer = 2;   // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
 
@@ -73,12 +73,12 @@ void keyboard_post_init_user(void) {
 void enable_click_layer(void) {
     layer_on(click_layer);
     click_timer = timer_read();
-    state = CLICKABLE;
+    clstate = CLICKABLE;
 }
 
 // クリック用のレイヤーを無効にする。 Disable layers for clicks.
 void disable_click_layer(void) {
-    state = NONE;
+    clstate = NONE;
     layer_off(click_layer);
 }
 
@@ -102,7 +102,7 @@ int16_t mmouse_move_y_sign(int16_t num) {
 
 // 現在クリックが可能な状態か。 Is it currently clickable?
 bool is_clickable_mode(void) {
-    return state == CLICKABLE;
+    return clstate == CLICKABLE;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -159,7 +159,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         default:
             if  (record->event.pressed) {
 
-                if (state == CLICKABLE)
+                if (clstate == CLICKABLE)
                 {
                 	// CLICKABLEの状態でクリックした場合、CLICKABLEを延長
                     enable_click_layer();
@@ -172,12 +172,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 
     if (mouse_report.x != 0 || mouse_report.y != 0) {
         
-        switch (state) {
+        switch (clstate) {
             case CLICKABLE:
                 click_timer = timer_read();
                 break;
@@ -209,13 +208,13 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 
             default:
                 click_timer = timer_read();
-                state = WAITING;
+                clstate = WAITING;
                 mouse_movement = 0;
         }
     }
     else
     {
-        switch (state) {
+        switch (clstate) {
             case CLICKABLE:
                 if (timer_elapsed(click_timer) > (user_config.to_reset_time * 100)) {
                     disable_click_layer();
@@ -225,23 +224,47 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
             case WAITING:
                 if (timer_elapsed(click_timer) > 50) {
                     mouse_movement = 0;
-                    state = NONE;
+                    clstate = NONE;
                 }
                 break;
 
             default:
                 mouse_movement = 0;
-                state = NONE;
+                clstate = NONE;
         }
     }
 
     return mouse_report;
 }
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // Auto enable scroll mode when the highest layer is 3
+    keyball_set_scroll_mode(get_highest_layer(state) == 3);
+
+    // CLICKABLEな状態でレイヤー切替が発生した場合
+    if (clstate == CLICKABLE) {
+    	// clstateをNONEにしておくことで、意図せずマウスレイヤーが解除されないようにする
+    	clstate = NONE;
+    	if((state & ~(0b0001 << click_layer)) != 0b0000){
+    		//マウスレイヤー以外が有効な場合、マウスレイヤーを無効化
+    		state &= ~(0b0001 << click_layer);
+    	}
+    }
+
+    return state;
+}
+
 #endif
 
 #ifndef AUTO_MOUSE_LAYER_ENABLE
 void keyboard_post_init_user(void) {
     keybord_initialized = true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    // Auto enable scroll mode when the highest layer is 3
+    keyball_set_scroll_mode(get_highest_layer(state) == 3);
+    return state;
 }
 #endif
 
@@ -311,12 +334,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 // clang-format on
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    // Auto enable scroll mode when the highest layer is 3
-    keyball_set_scroll_mode(get_highest_layer(state) == 3);
-    return state;
-}
 
 // encoder logic
 #ifdef ENCODER_ENABLE
