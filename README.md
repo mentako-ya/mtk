@@ -25,6 +25,9 @@ mtk is clone keybord with trackball.
 
 
 ## 更新情報
+### 意図せずマウスレイヤー２が解除されてしまうバグに対応しました。
+自動でマウスレイヤーに切り替わっている間に手動でレイヤー２に切り替えると、一定時間経過後にレイヤー２が解除されるバグに対応しました。
+
 ### エンコーダーの解像度を調整しました。
 [エンコーダーの仕様](https://tech.alpsalpine.com/j/products/detail/EC11E18244AU/#ancFig3)に合わせて、'ENCODER_RESOLUTION 4 → 2' に調整しました。
 
