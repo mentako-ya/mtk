@@ -2,6 +2,10 @@
 
 mtk is clone keybord with trackball.
 
+<img width="１０００" src="mtk/photo/mtk64e.JPG">
+<img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
+<img width="500" src="mtk/photo/type-c.JPG">
+
 - via、remap対応 ファームウェア  
    [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
    
