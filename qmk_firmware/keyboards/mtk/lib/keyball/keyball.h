@@ -170,3 +170,7 @@ uint8_t keyball_get_cpi(void);
 
 // TODO: document
 void keyball_set_cpi(uint8_t cpi);
+
+#ifndef SLAVE_SCRL_DISABLE
+#    define  SLAVE_SCRL_DISABLE 0
+#endif
