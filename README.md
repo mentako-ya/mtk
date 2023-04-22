@@ -212,10 +212,10 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
  
 ## 左右トラックボール構成の動作
 
-[mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) を使用するとUSBケーブルを挿した側（Master)がトラックボール、反対側（Slave)がスクロール（上下左右）になります。
+[mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) を使用するとUSBケーブルを挿した側（Master)がポインター操作、反対側（Slave)がスクロール操作（上下左右）になります。
 レイヤー３に切り替えた際に左右のモードが入れ替わります。
 
-[mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) を使用するとMaster側Slave側ともトラックボールになります。がマウスホイール（上下左右）になります。
+[mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) を使用するとMaster側Slave側ともポインター操作になります。
 レイヤー３に切り替えた際に左右ともスクロールになります。
 
 ## トラックボールのお手入れ
