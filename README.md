@@ -34,6 +34,15 @@ mtk is clone keybord with trackball.
 
 ## 更新情報
 
+### オーディオ制御とシステム制御キーを有効化しました
+   [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
+   
+   ご自身でファームウェアをビルドする場合、[rules.mk](https://github.com/mentako-ya/mtk/blob/cd9f4ba413dade68378f4804782a1528e7ef739e/qmk_firmware/keyboards/mtk/mtk64e/rules.mk#L12)の
+   ```EXTRAKEY_ENABLE = no        # Audio control and System control```
+   をyesに修正してください。
+   
+   ファームウェアのサイズが上限に近いため、有効化している機能の組み合わせによっては、ファイル容量オーバーによりビルドできない場合があります。
+
 ### 左右ボール用ファームウェアを追加しました。
    [mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) rev2基板用　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
    [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
