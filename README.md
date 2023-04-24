@@ -6,7 +6,7 @@ mtk is clone keybord with trackball.
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
 
-## via、remap対応 ファームウェア  
+## remap対応 ファームウェア  
 - [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
    
 - [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
@@ -19,7 +19,7 @@ mtk is clone keybord with trackball.
    
 - [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
 
-## via、remap用 via.json
+## remap用 via.json
 
 - [mtk64_rb_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_rb_via.json)     rev1 mtk64　右ボール用 
     
