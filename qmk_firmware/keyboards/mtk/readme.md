@@ -9,10 +9,10 @@
 2. Check out [qmk/qmk_firmware](https://github.com/qmk/qmk_firmware/) repository in another place.
 
     ```console
-    $ git clone https://github.com/qmk/qmk_firmware.git --depth 1 --recurse-submodules --shallow-submodules -b 0.18.17 qmk
+    $ git clone https://github.com/qmk/qmk_firmware.git --depth 1 --recurse-submodules --shallow-submodules -b 0.16.3 qmk
     ```
 
-    Currently mtk firmwares are verified to compile with QMK 0.18.17
+    Currently mtk firmwares are verified to compile with QMK 0.16.3
 
 3. Create a symbolic link to this `mtk/` directory from [qmk/qmk_firmware]'s `keyboards/` directory.
 

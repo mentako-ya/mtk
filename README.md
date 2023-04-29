@@ -33,7 +33,14 @@ mtk is clone keybord with trackball.
 
 
 ## 更新情報
-
+### ファームウェアを再ビルドしました
+   [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+   [mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) rev2基板用　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+   [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
+   
+   qmk_firmwareのバージョン不整合により、キーボード接続時に初期化処理が正しく動作しない場合があったため、qmk_firmware 0.16.3 で再ビルドしました。
+   レイヤー３のカスタムキーコードが変わりました。ファームウェア更新した場合、キーマップをリセットするか、新しいキーコードとの対応を確認してキーマッピングを修正してください。
+　
 ### オーディオ制御とシステム制御キーを有効化しました
    [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
    
@@ -188,36 +195,36 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
 コード値については下記の表を参照してください。
 
 
-### レイヤー３トラックボール設定のコード値　mtk64　（mtk_mtk64_via.hex）
+### レイヤー３トラックボール設定のコード値　mtk64　（mtk_mtk64_via.hex/mtk_mtk64e_via.hex）
 - 0x5DA5:トラックボール設定リセット
 - 0x5DA6:トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
-- 0x5DA7:トラックボールのカーソル速度 -1000
-- 0x5DA8:トラックボールのカーソル速度 -100
-- 0x5DA9:トラックボールのカーソル速度 +100
-- 0x5DAA:トラックボールのカーソル速度 +1000
-- 0x5DAB:トラックボールのスクロールモードOn/Off
-- 0x5DAC:トラックボールのスクロールモードOn
-- 0x5DAD:トラックボールのスクロール速度を下げる
-- 0x5DAE:トラックボールのスクロール速度を上げる
-
-### レイヤー３トラックボール設定のコード値　mtk64e　（mtk_mtk64e_via.hex/mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DA5:トラックボール設定リセット
-- 0x5DA6:トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
-- 0x5DAA:トラックボールのカーソル速度 -1000
-- 0x5DA8:トラックボールのカーソル速度 -100
 - 0x5DA7:トラックボールのカーソル速度 +100
+- 0x5DA8:トラックボールのカーソル速度 -100
 - 0x5DA9:トラックボールのカーソル速度 +1000
+- 0x5DAA:トラックボールのカーソル速度 -1000
 - 0x5DAB:トラックボールのスクロールモードOn/Off
 - 0x5DAC:トラックボールのスクロールモードOn
 - 0x5DAD:トラックボールのスクロール速度を下げる
 - 0x5DAE:トラックボールのスクロール速度を上げる
 
-### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e　（mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DAF:自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
-- 0x5DB0:自動マウスレイヤー切替距離 +
-- 0x5DB1:自動マウスレイヤー切替距離 -
-- 0x5DB2:自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
-- 0x5DB3:自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
+### レイヤー３トラックボール設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
+- 0x5DA6:トラックボール設定リセット
+- 0x5DA7:トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
+- 0x5DA8:トラックボールのカーソル速度 +100
+- 0x5DA9:トラックボールのカーソル速度 -100
+- 0x5DAA:トラックボールのカーソル速度 +1000
+- 0x5DAB:トラックボールのカーソル速度 -1000
+- 0x5DAC:トラックボールのスクロールモードOn/Off
+- 0x5DAD:トラックボールのスクロールモードOn
+- 0x5DAE:トラックボールのスクロール速度を下げる
+- 0x5DAF:トラックボールのスクロール速度を上げる
+
+### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
+- 0x5DA0:自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
+- 0x5DB1:自動マウスレイヤー切替距離 +
+- 0x5DB2:自動マウスレイヤー切替距離 -
+- 0x5DB3:自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
+- 0x5DB4:自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
  
 ## 左右トラックボール構成の動作
 
