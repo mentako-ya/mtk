@@ -35,11 +35,13 @@ mtk is clone keybord with trackball.
 ## 更新情報
 ### ファームウェアを再ビルドしました
    [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
    [mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) rev2基板用　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+
    [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
    
    qmk_firmwareのバージョン不整合により、キーボード接続時に初期化処理が正しく動作しない場合があったため、qmk_firmware 0.16.3 で再ビルドしました。
-   レイヤー３のカスタムキーコードが変わりました。ファームウェア更新した場合、キーマップをリセットするか、新しいキーコードとの対応を確認してキーマッピングを修正してください。
+   再ビルドによりレイヤー３のカスタムキーコードが変わりました。ファームウェア更新した場合、キーマップをリセットするか、新しいキーコードとの対応を確認してキーマッピングを修正してください。
 　
 ### オーディオ制御とシステム制御キーを有効化しました
    [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
