@@ -5,8 +5,7 @@ mtk is clone keybord with trackball.
 <img width="１０００" src="mtk/photo/mtk64e.JPG">
 mtk64e　作成例
 
--　キーキャップ:CORSAIR PBT DOUBLE-SHOT 交換用カラーキーキャップセット - 日本語108キー, Arctic White - CH-9911040-JP
-
+- キーキャップ:CORSAIR PBT DOUBLE-SHOT 交換用カラーキーキャップセット - 日本語108キー, Arctic White - CH-9911040-JP
 - トラックボール：ぺリックス PERIPRO-303 GR 34 mm
 
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
