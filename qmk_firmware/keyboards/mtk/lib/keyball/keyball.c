@@ -23,8 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keyball.h"
 #include "drivers/pmw3389/pmw3389.h"
 
-const uint8_t CPI_DEFAULT    = KEYBALL_CPI_DEFAULT / 100;
-const uint8_t CPI_MAX        = pmw3389_MAXCPI + 1;
+const uint16_t CPI_DEFAULT    = KEYBALL_CPI_DEFAULT;
+const uint16_t CPI_MAX        = pmw3389_MAXCPI + 1;
 const uint8_t SCROLL_DIV_MAX = 7;
 
 keyball_t keyball = {
@@ -66,7 +66,7 @@ static inline int8_t clip2int8(int16_t v) {
     return (v) < -127 ? -127 : (v) > 127 ? 127 : (int8_t)v;
 }
 
-static const char *format_4d(int8_t d) {
+static const char *format_4d(int16_t d) {
     static char buf[5] = {0}; // max width (4) + NUL (1)
     char        lead   = ' ';
     if (d < 0) {
@@ -98,12 +98,12 @@ static char to_1x(uint8_t x) {
     return x < 10 ? x + '0' : x + 'a' - 10;
 }
 
-static void add_cpi(int8_t delta) {
+static void add_cpi(int16_t delta) {
     int16_t v = keyball_get_cpi() + delta;
     keyball_set_cpi(v < 1 ? 1 : v);
 }
 
-static void add_scroll_div(int8_t delta) {
+static void add_scroll_div(int16_t delta) {
     int8_t v = keyball_get_scroll_div() + delta;
     keyball_set_scroll_div(v < 1 ? 1 : v);
 }
@@ -463,7 +463,7 @@ void keyball_oled_render_ballinfo(void) {
     oled_write(format_4d(keyball.last_mouse.v), false);
     // CPI
     oled_write_P(PSTR("     CPI"), false);
-    oled_write(format_4d(keyball_get_cpi()) + 1, false);
+    oled_write(format_4d(keyball_get_cpi() / 100) + 1, false);
     oled_write_P(PSTR("00  S"), false);
     oled_write_char(keyball.scroll_mode ? '1' : '0', false);
     oled_write_P(PSTR("  D"), false);
@@ -527,19 +527,19 @@ void keyball_set_scroll_div(uint8_t div) {
     keyball.scroll_div = div > SCROLL_DIV_MAX ? SCROLL_DIV_MAX : div;
 }
 
-uint8_t keyball_get_cpi(void) {
+uint16_t keyball_get_cpi(void) {
     return keyball.cpi_value == 0 ? CPI_DEFAULT : keyball.cpi_value;
 }
 
-void keyball_set_cpi(uint8_t cpi) {
+void keyball_set_cpi(uint16_t cpi) {
     if (cpi > CPI_MAX) {
-        cpi = CPI_MAX;
+       cpi = CPI_MAX;
     }
     keyball.cpi_value   = cpi;
     keyball.cpi_changed = true;
     if (keyball.this_have_ball) {
         pmw3389_cpi_set(cpi == 0 ? CPI_DEFAULT - 1 : cpi - 1);
-        pmw3389_reg_write(pmw3389_Motion_Burst, 0);
+//        pmw3389_reg_write(pmw3389_Motion_Burst, 0);
     }
 }
 
@@ -559,7 +559,7 @@ void keyboard_post_init_kb(void) {
     // read keyball configuration from EEPROM
     if (eeconfig_is_enabled()) {
         keyball_config_t c = {.raw = eeconfig_read_kb()};
-        keyball_set_cpi(c.cpi);
+        keyball_set_cpi(c.cpi * pmw3389_CPI_STEP);
         keyball_set_scroll_div(c.sdiv);
     }
 
@@ -619,23 +619,23 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 break;
             case KBC_SAVE: {
                 keyball_config_t c = {
-                    .cpi  = keyball.cpi_value,
+                    .cpi  = keyball.cpi_value / pmw3389_CPI_STEP,
                     .sdiv = keyball.scroll_div,
                 };
                 eeconfig_update_kb(c.raw);
             } break;
 
             case CPI_I100:
-                add_cpi(1);
+                add_cpi(100);
                 break;
             case CPI_D100:
-                add_cpi(-1);
+                add_cpi(-100);
                 break;
             case CPI_I1K:
-                add_cpi(10);
+                add_cpi(1000);
                 break;
             case CPI_D1K:
-                add_cpi(-10);
+                add_cpi(-1000);
                 break;
 
             case SCRL_TO:

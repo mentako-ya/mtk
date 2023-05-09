@@ -17,6 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pmw3389.h"
 #include "quantum.h"
+#ifdef CONSOLE_ENABLE
+  #include <print.h>
+#endif
 
 #define PMW3389_SPI_MODE 3
 #define PMW3389_SPI_DIVISOR (F_CPU / PMW3389_CLOCKS)
@@ -26,7 +29,7 @@ bool pmw3389_spi_start(void) {
     return spi_start(PMW3389_NCS_PIN, false, PMW3389_SPI_MODE, PMW3389_SPI_DIVISOR);
 }
 
-uint8_t pmw3389_reg_read(uint8_t addr) {
+uint16_t pmw3389_reg_read(uint8_t addr) {
     pmw3389_spi_start();
     spi_write(addr & 0x7f);
     wait_us(160);
@@ -40,19 +43,25 @@ void pmw3389_reg_write(uint8_t addr, uint8_t data) {
     pmw3389_spi_start();
     spi_write(addr | 0x80);
     spi_write(data);
+    wait_us(35);
     spi_stop();
-    wait_us(180);
+    wait_us(145);
 }
 
-uint8_t pmw3389_cpi_get(void) {
-    return pmw3389_reg_read(pmw3389_Config1);
+uint16_t pmw3389_cpi_get(void) {
+    uint16_t cpival = (pmw3389_reg_read(pmw3389_Resolution_H) << 8) | pmw3389_reg_read(pmw3389_Resolution_L);
+    return (uint16_t)((cpival) & 0xFFFF) * pmw3389_CPI_STEP;
 }
 
-void pmw3389_cpi_set(uint8_t cpi) {
-    if (cpi > pmw3389_MAXCPI) {
-        cpi = pmw3389_MAXCPI;
-    }
-    pmw3389_reg_write(pmw3389_Config1, cpi);
+void pmw3389_cpi_set(uint16_t cpi) {
+	uint16_t cpival = cpi / pmw3389_CPI_STEP;
+    pmw3389_reg_write(pmw3389_Resolution_L, cpival & 0xFF);
+    pmw3389_reg_write(pmw3389_Resolution_H, (cpival >> 8) & 0xFF);
+    pmw3389_reg_write(pmw3389_Motion_Burst, 0);
+#if defined(CONSOLE_ENABLE)
+    dprintf("pmw3389_Resolution_L: %02X\n", cpival & 0xFF);
+    dprintf("pmw3389_Resolution_H: %02X\n", (cpival >> 8) & 0xFF);
+#endif
 }
 
 static uint32_t pmw3389_timer      = 0;

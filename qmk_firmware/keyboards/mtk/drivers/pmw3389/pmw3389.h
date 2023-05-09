@@ -60,10 +60,10 @@ bool pmw3389_motion_burst(pmw3389_motion_t *d);
 uint32_t pmw3389_scan_rate_get(void);
 
 // TODO: document
-uint8_t pmw3389_cpi_get(void);
+uint16_t pmw3389_cpi_get(void);
 
 // TODO: document
-void pmw3389_cpi_set(uint8_t cpi);
+void pmw3389_cpi_set(uint16_t cpi);
 
 //////////////////////////////////////////////////////////////////////////////
 // Register operations
@@ -72,7 +72,7 @@ void pmw3389_cpi_set(uint8_t cpi);
 void pmw3389_reg_write(uint8_t addr, uint8_t data);
 
 /// pmw3389_reg_read reads a value from a register.
-uint8_t pmw3389_reg_read(uint8_t addr);
+uint16_t pmw3389_reg_read(uint8_t addr);
 
 typedef enum {
     pmw3389_Product_ID                 = 0x00,
@@ -89,7 +89,8 @@ typedef enum {
     pmw3389_Shutter_Lower              = 0x0B,
     pmw3389_Shutter_Upper              = 0x0C,
     pmw3389_Control                    = 0x0D,
-    pmw3389_Config1                    = 0x0F,
+    pmw3389_Resolution_L               = 0x0E,
+    pmw3389_Resolution_H               = 0x0F,
     pmw3389_Config2                    = 0x10,
     pmw3389_Angle_Tune                 = 0x11,
     pmw3389_Frame_Capture              = 0x12,
@@ -126,9 +127,9 @@ typedef enum {
     pmw3389_LiftCutoff_Tune2           = 0x65,
 } pmw3389_reg_t;
 
-enum {
-    pmw3389_MAXCPI = 0xA0, // = 160: 16000 CPI
-};
+#define pmw3389_CPI_STEP 50
+#define pmw3389_CPI_MIN 50
+#define pmw3389_MAXCPI 16000
 
 //////////////////////////////////////////////////////////////////////////////
 // SPI operations
