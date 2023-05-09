@@ -24,6 +24,8 @@ mtk64e　作成例
    
 - [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
 
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
 ## remap用 via.json
 
 - [mtk64_rb_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_rb_via.json)     rev1 mtk64　右ボール用 
@@ -38,6 +40,12 @@ mtk64e　作成例
 
 
 ## 更新情報
+
+### トラックボールセンサーをPMW3389に変更可能になりました
+　　https://github.com/mentako-ya/mtk/tree/development/PMW3389
+　　
+   [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
 ### ファームウェアを再ビルドしました
    [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
