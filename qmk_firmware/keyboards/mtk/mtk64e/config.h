@@ -22,10 +22,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 // USB Device descriptor parameters
-#define VENDOR_ID           0x4d59     // "MY" = Mentako_ya
+#define VENDOR_ID           0x4d59     // "MY" = mentako_ya
 #define PRODUCT_ID          0x0100
 #define DEVICE_VER          0x0002
-#define MANUFACTURER        Mentako_ya
+#define MANUFACTURER        mentako_ya
 #define PRODUCT             mtk64e
 
 // Key matrix parameters (duplex matrix)
@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef ENCODER_ENABLE
 #define ENCODERS_PAD_A { B6, B3 }
 #define ENCODERS_PAD_B { B5, B2 }
-#define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTION 2
 #endif
 
 // Split parameters
@@ -86,3 +86,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+#define LAYER_STATE_8BIT

@@ -36,3 +36,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAP_CODE_DELAY 5
 #define DYNAMIC_KEYMAP_LAYER_COUNT 4
 #define AUTO_MOUSE_LAYER_ENABLE
+
+// slave側トラックボールをスクロール操作に使用する場合（デフォルト）
+//#define SLAVE_SCRL_DISABLE 0
+// slave側トラックボールをポインター操作に使用する場合
+#define SLAVE_SCRL_DISABLE 1

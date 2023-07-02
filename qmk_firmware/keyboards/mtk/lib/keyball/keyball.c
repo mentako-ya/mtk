@@ -172,7 +172,7 @@ static void motion_to_mouse_scroll(keyball_motion_t *m, report_mouse_t *r, bool 
     m->y -= y << div;
 
     // apply to mouse report.
-#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147
+#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147 || KEYBALL_MODEL == 44
     r->h = clip2int8(y);
     r->v = -clip2int8(x);
     if (is_left) {
@@ -201,6 +201,8 @@ static void motion_to_mouse_scroll(keyball_motion_t *m, report_mouse_t *r, bool 
 #endif
 }
 
+
+
 static void motion_to_mouse(keyball_motion_t *m, report_mouse_t *r, bool is_left, bool as_scroll) {
     if (as_scroll) {
         motion_to_mouse_scroll(m, r, is_left);
@@ -208,6 +210,83 @@ static void motion_to_mouse(keyball_motion_t *m, report_mouse_t *r, bool is_left
         motion_to_mouse_move(m, r, is_left);
     }
 }
+
+#ifdef SLAVE_SCRL_DISABLE
+#if SLAVE_SCRL_DISABLE == 1
+
+static void add_motion_to_mouse_move(keyball_motion_t *m, report_mouse_t *r, bool is_left) {
+#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147
+    if (is_left) {
+        r->x -= clip2int8(m->y);
+        r->y -= clip2int8(m->x);
+    } else {
+        r->x += clip2int8(m->y);
+        r->y += clip2int8(m->x);
+    }
+#elif KEYBALL_MODEL == 46
+    if (is_left) {
+        r->x -= clip2int8(m->x);
+        r->y -= clip2int8(m->y);
+    } else {
+        r->x += clip2int8(m->x);
+        r->y += clip2int8(m->y);
+    }
+#else
+#    error("unknown Keyball model")
+#endif
+    // clear motion
+    m->x = 0;
+    m->y = 0;
+}
+
+static void add_motion_to_mouse_scroll(keyball_motion_t *m, report_mouse_t *r, bool is_left) {
+    // consume motion of trackball.
+    uint8_t div = keyball_get_scroll_div() - 1;
+    int16_t x   = m->x >> div;
+    m->x -= x << div;
+    int16_t y = m->y >> div;
+    m->y -= y << div;
+
+    // apply to mouse report.
+#if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147 || KEYBALL_MODEL == 44
+    if (is_left) {
+        r->h -= clip2int8(y);
+        r->v += clip2int8(x);
+    } else {
+        r->h += clip2int8(y);
+        r->v -= clip2int8(x);
+    }
+#elif KEYBALL_MODEL == 46
+    r->h += clip2int8(x);
+    r->v += clip2int8(y);
+#else
+#    error("unknown Keyball model")
+#endif
+
+#if KEYBALL_SCROLLSNAP_ENABLE
+    // scroll snap.
+    uint32_t now = timer_read32();
+    if (r->h != 0 || r->v != 0) {
+        keyball.scroll_snap_last = now;
+    } else if (TIMER_DIFF_32(now, keyball.scroll_snap_last) >= KEYBALL_SCROLLSNAP_RESET_TIMER) {
+        keyball.scroll_snap_tension_h = 0;
+    }
+    if (abs(keyball.scroll_snap_tension_h) < KEYBALL_SCROLLSNAP_TENSION_THRESHOLD) {
+        keyball.scroll_snap_tension_h += y;
+        r->h = 0;
+    }
+#endif
+}
+
+static void add_motion_to_mouse(keyball_motion_t *m, report_mouse_t *r, bool is_left, bool as_scroll) {
+    if (as_scroll) {
+        add_motion_to_mouse_scroll(m, r, is_left);
+    } else {
+        add_motion_to_mouse_move(m, r, is_left);
+    }
+}
+#endif
+#endif
 
 static inline bool should_report(void) {
     uint32_t now = timer_read32();
@@ -245,7 +324,18 @@ report_mouse_t pointing_device_driver_get_report(report_mouse_t rep) {
     if (is_keyboard_master() && should_report()) {
         // modify mouse report by PMW3360 motion.
         motion_to_mouse(&keyball.this_motion, &rep, is_keyboard_left(), keyball.scroll_mode);
-        motion_to_mouse(&keyball.that_motion, &rep, !is_keyboard_left(), keyball.scroll_mode ^ keyball.this_have_ball);
+#ifdef SLAVE_SCRL_DISABLE
+	#if SLAVE_SCRL_DISABLE == 1
+    	//#error "SLAVE_SCRL_DISABLE is defined and yes"
+    add_motion_to_mouse(&keyball.that_motion, &rep, !is_keyboard_left(), keyball.scroll_mode);
+	#else
+		//#error "SLAVE_SCRL_DISABLE is defined and no"
+    motion_to_mouse(&keyball.that_motion, &rep, !is_keyboard_left(), keyball.scroll_mode ^ keyball.this_have_ball);
+	#endif
+#else
+    //#error "SLAVE_SCRL_DISABLE is not defined"
+    motion_to_mouse(&keyball.that_motion, &rep, !is_keyboard_left(), keyball.scroll_mode ^ keyball.this_have_ball);
+#endif
         // store mouse report for OLED.
         keyball.last_mouse = rep;
     }
@@ -291,8 +381,7 @@ static void rpc_get_info_invoke(void) {
 
 #    ifdef VIA_ENABLE
     // adjust VIA layout options according to current combination.
-//    uint8_t  layouts = (keyball.this_have_ball ? (is_keyboard_left() ? 0x02 : 0x01) : 0x00) | (keyball.that_have_ball ? (is_keyboard_left() ? 0x01 : 0x02) : 0x00);
-    uint8_t  layouts = 0x3;
+    uint8_t  layouts = (keyball.this_have_ball ? (is_keyboard_left() ? 0x02 : 0x01) : 0x00) | (keyball.that_have_ball ? (is_keyboard_left() ? 0x01 : 0x02) : 0x00);
     uint32_t curr    = via_get_layout_options();
     uint32_t next    = (curr & ~0x3) | layouts;
     if (next != curr) {
@@ -499,6 +588,11 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    // strip QK_MODS part.
+    if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
+        keycode &= 0xff;
+    }
+
     switch (keycode) {
 #ifndef MOUSEKEY_ENABLE
         // process KC_MS_BTN1~8 by myself
@@ -506,13 +600,14 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         case KC_MS_BTN1 ... KC_MS_BTN8: {
             extern void register_button(bool, enum mouse_buttons);
             register_button(record->event.pressed, MOUSE_BTN_MASK(keycode - KC_MS_BTN1));
-            return false;
+            // to apply QK_MODS actions, allow to process others.
+            return true;
+        }
 #endif
 
-            case SCRL_MO:
-                keyball_set_scroll_mode(record->event.pressed);
-                return false;
-        }
+        case SCRL_MO:
+            keyball_set_scroll_mode(record->event.pressed);
+            return false;
     }
 
     // process events which works on pressed only.
