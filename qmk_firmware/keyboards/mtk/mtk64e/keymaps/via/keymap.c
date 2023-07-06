@@ -20,8 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 
-bool keybord_initialized = false;
-
 enum custom_keycodes {
     KC_TG_CLICKABLE = KEYBALL_SAFE_RANGE, //0x5DAF
     KC_TO_CLICKABLE_INC,                  //0x5DB0
@@ -66,7 +64,6 @@ void eeconfig_init_user(void) {
 
 void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
-    keybord_initialized = true;
 }
 
 // クリック用のレイヤーを有効にする。　Enable layers for clicks
@@ -258,7 +255,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifndef AUTO_MOUSE_LAYER_ENABLE
 void keyboard_post_init_user(void) {
-    keybord_initialized = true;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -338,6 +334,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // encoder logic
 #ifdef ENCODER_ENABLE
 
+bool encoder_initialized = false;
+uint16_t init_timer = 0;
+uint16_t init_delay = 1000;
+
 enum encoder_number {
     _1ST_ENC = 0,
     _2ND_ENC,
@@ -347,7 +347,14 @@ enum encoder_number {
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
 
-	if(keybord_initialized != true) {
+	if(encoder_initialized != true) {
+        // encoder誤作動防止
+        if(init_timer == 0){
+            init_timer = timer_read();
+        } 
+        if(timer_elapsed(init_timer) > init_delay){
+            encoder_initialized = true;
+        }       
 		return true;
 	}
 
