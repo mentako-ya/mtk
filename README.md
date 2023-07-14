@@ -15,6 +15,8 @@ mtk64e　作成例
 - [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
    
 - [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
+
+- [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
    
 - [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
@@ -22,7 +24,7 @@ mtk64e　作成例
 
 - [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
    
-- [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
+- [mtk_mtk64e_AutoMouseLayer_via_leftball.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex) rev2基板用　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
@@ -41,11 +43,15 @@ mtk64e　作成例
 
 ## 更新情報
 
-### トラックボールセンサーをPMW3389に変更可能になりました
+### トラックボールセンサーをPMW3389に更新しました
    
    [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
    
-   ソースコード : https://github.com/mentako-ya/mtk/tree/development/PMW3389
+### 右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替有効　ファームウェアを追加しました
+
+   [mtk_mtk64e_AutoMouseLayer_via_leftball.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex) rev2基板用　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+
+   ソースコード : https://github.com/mentako-ya/mtk/tree/mtk64e_leftball
 
 ### ファームウェアを再ビルドしました
    [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
@@ -224,27 +230,27 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
 - 0x5DAE:SCRL_DVD   トラックボールのスクロール速度を上げる
 
 ### レイヤー３トラックボール設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DA6:KBC_RST    トラックボール設定リセット
-- 0x5DA7:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
-- 0x5DA8:CPI_I100   トラックボールのカーソル速度 +100
-- 0x5DA9:CPI_D100   トラックボールのカーソル速度 -100
-- 0x5DAA:CPI_I1K    トラックボールのカーソル速度 +1000
-- 0x5DAB:CPI_D1K    トラックボールのカーソル速度 -1000
-- 0x5DAC:SCRL_TO    トラックボールのスクロールモードOn/Off
-- 0x5DAD:SCRL_MO    トラックボールのスクロールモードOn
-- 0x5DAE:SCRL_DVI   トラックボールのスクロール速度を下げる
-- 0x5DAF:SCRL_DVD   トラックボールのスクロール速度を上げる
+- 0x5DB1:KBC_RST    トラックボール設定リセット
+- 0x5DB2:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
+- 0x5DB3:CPI_I100   トラックボールのカーソル速度 +100
+- 0x5DB4:CPI_D100   トラックボールのカーソル速度 -100
+- 0x5DB5:CPI_I1K    トラックボールのカーソル速度 +1000
+- 0x5DB6:CPI_D1K    トラックボールのカーソル速度 -1000
+- 0x5DB7:SCRL_TO    トラックボールのスクロールモードOn/Off
+- 0x5DB8:SCRL_MO    トラックボールのスクロールモードOn
+- 0x5DB9:SCRL_DVI   トラックボールのスクロール速度を下げる
+- 0x5DBA:SCRL_DVD   トラックボールのスクロール速度を上げる
 
 ### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DB0:KC_TG_CLICKABLE     自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
-- 0x5DB1:KC_TO_CLICKABLE_INC 自動マウスレイヤー切替距離 +
-- 0x5DB2:KC_TO_CLICKABLE_DEC 自動マウスレイヤー切替距離 -
-- 0x5DB3:KC_TO_RESET_INC     自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
-- 0x5DB4:KC_TO_RESET_DEC.    自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
+- 0x5DBB:KC_TG_CLICKABLE     自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
+- 0x5DBC:KC_TO_CLICKABLE_INC 自動マウスレイヤー切替距離 +
+- 0x5DBD:KC_TO_CLICKABLE_DEC 自動マウスレイヤー切替距離 -
+- 0x5DBE:KC_TO_RESET_INC     自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
+- 0x5DBF:KC_TO_RESET_DEC.    自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
  
 ## 左右トラックボール構成の動作
 
-[mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) を使用するとUSBケーブルを挿した側（Master)がポインター操作、反対側（Slave)がスクロール操作（上下左右）になります。
+[mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) を使用するとUSBケーブルを挿した側（Master)がポインター操作、反対側（Slave）がスクロール操作（上下左右）になります。
 レイヤー３に切り替えた際に左右のモードが入れ替わります。
 
 [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) を使用するとMaster側Slave側ともポインター操作になります。
