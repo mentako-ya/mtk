@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Configurations
 
 #ifndef KEYBALL_CPI_DEFAULT
-#    define KEYBALL_CPI_DEFAULT 500
+#    define KEYBALL_CPI_DEFAULT 1000
 #endif
 
 #ifndef KEYBALL_SCROLL_DIV_DEFAULT
@@ -92,7 +92,7 @@ enum keyball_keycodes {
 typedef union {
     uint32_t raw;
     struct {
-        uint8_t cpi : 7;
+        uint16_t cpi : 9;
         uint8_t sdiv : 3; // scroll divider
     };
 } keyball_config_t;
@@ -106,7 +106,7 @@ typedef struct {
     int16_t y;
 } keyball_motion_t;
 
-typedef uint8_t keyball_cpi_t;
+typedef uint16_t keyball_cpi_t;
 
 typedef struct {
     bool this_have_ball;
@@ -116,7 +116,7 @@ typedef struct {
     keyball_motion_t this_motion;
     keyball_motion_t that_motion;
 
-    uint8_t cpi_value;
+    uint16_t cpi_value;
     bool    cpi_changed;
 
     bool     scroll_mode;
@@ -166,10 +166,10 @@ uint8_t keyball_get_scroll_div(void);
 void keyball_set_scroll_div(uint8_t div);
 
 // TODO: document
-uint8_t keyball_get_cpi(void);
+uint16_t keyball_get_cpi(void);
 
 // TODO: document
-void keyball_set_cpi(uint8_t cpi);
+void keyball_set_cpi(uint16_t cpi);
 
 #ifndef SLAVE_SCRL_DISABLE
 #    define  SLAVE_SCRL_DISABLE 0
