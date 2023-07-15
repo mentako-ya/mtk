@@ -44,6 +44,8 @@ mtk64e　作成例
 ## 更新情報
 
 ### トラックボールセンサーをPMW3389に更新しました
+   トラックボールセンサーをより高性能なPMW3389DM-T3QUに更新しました。
+   [PMW3360DM-T2QUとPMW3389DM-T3QUの比較](https://www.pixart.com/products-comparison/7/Optical_Mouse_Sensor)
    
    [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
    
