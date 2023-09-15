@@ -12,6 +12,8 @@ mtk64e　作成例
 <img width="500" src="mtk/photo/type-c.JPG">
 
 ## remap対応 ファームウェア  
+
+!!! Remapのアップデートにより、従来のファームウェアを使用したキーボードを接続するとエラーメッセージが表示されマッピング変更ができません。Remapをご使用の場合、当面の間旧バージョンのRemap https://qmk018.remap-keys.app をご使用ください。！！！
 - [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
    
 - [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
@@ -133,7 +135,7 @@ TRSケーブルは、ケーブル付け根が本体のケースの中まで入�
 
 ## キーマップ変更
 
-キーマップの変更はChromeブラウザを使用して、https://remap-keys.app/　で変更します。
+キーマップの変更はChromeブラウザを使用して、https://qmk018.remap-keys.app　で変更します。
 
 下記に本キーボードを使用する際に最低限必要な手順を記載します。
 
