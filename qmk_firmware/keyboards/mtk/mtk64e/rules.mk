@@ -9,18 +9,18 @@ LTO_ENABLE = yes
 
 # Build Options
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
-EXTRAKEY_ENABLE = yes       # Audio control and System control
+EXTRAKEY_ENABLE = no       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 AUDIO_ENABLE = no           # Audio output
 
-# kb64 is duplex matrix, uses custom matrix.
+# Duplex matrix.
 CUSTOM_MATRIX = lite
-SRC += matrix.c
+SRC += lib/duplexmatrix/duplexmatrix.c
 
-# Keyball61 is split keyboard.
+# Split keyboard.
 SPLIT_KEYBOARD = yes
 
 # Optical sensor driver for trackball.
@@ -34,7 +34,6 @@ MOUSEKEY_ENABLE = no
 
 # Enabled only one of RGBLIGHT and RGB_MATRIX if necessary.
 RGBLIGHT_ENABLE = yes        # Enable RGBLIGHT
-RGBLIGHT_DRIVER = WS2812
 RGB_MATRIX_ENABLE = no      # Enable RGB_MATRIX (not work yet)
 RGB_MATRIX_DRIVER = WS2812
 
