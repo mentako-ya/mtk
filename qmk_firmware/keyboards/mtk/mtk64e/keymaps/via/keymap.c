@@ -1,7 +1,5 @@
 /*
-Copyright 2022 Mentako_ya
-Copyright 2022 @Yowkees
-Copyright 2022 MURAOKA Taro (aka KoRoN, @kaoriya)
+Copyright 2022 mentako_ya
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -57,16 +55,9 @@ int16_t mouse_movement;
 void eeconfig_init_user(void) {
     user_config.raw = 0;
     user_config.tg_clickable_enabled = true;
-    user_config.to_clickable_movement = 50;
+    user_config.to_clickable_movement = 100;
     user_config.to_reset_time = 10;
     eeconfig_update_user(user_config.raw);
-}
-
-void keyboard_post_init_user(void) {
-#if defined(CONSOLE_ENABLE)
-    debug_enable = true;
-#endif
-    user_config.raw = eeconfig_read_user();
 }
 
 // クリック用のレイヤーを有効にする。　Enable layers for clicks
@@ -257,11 +248,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #endif
 
 #ifndef AUTO_MOUSE_LAYER_ENABLE
-void keyboard_post_init_user(void) {
-#if defined(CONSOLE_ENABLE)
-    debug_enable = true;
-#endif
-}
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
@@ -340,10 +326,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // encoder logic
 #ifdef ENCODER_ENABLE
 
-bool encoder_initialized = false;
-uint16_t init_timer = 0;
-uint16_t init_delay = 500;
-
 enum encoder_number {
     _1ST_ENC = 0,
     _2ND_ENC,
@@ -351,16 +333,12 @@ enum encoder_number {
     _4TH_ENC,
 };
 
+bool encoder_initialized = false;
+
 bool encoder_update_user(uint8_t index, bool clockwise) {
 
 	if(encoder_initialized != true) {
-        // encoder誤作動防止
-        if(init_timer == 0){
-            init_timer = timer_read();
-        } 
-        if(timer_elapsed(init_timer) > init_delay){
-            encoder_initialized = true;
-        }       
+        // encoder誤作動防止     
 		return true;
 	}
 
@@ -416,3 +394,15 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 	return true;
 }
 #endif
+
+void keyboard_post_init_user(void) {
+#if defined(CONSOLE_ENABLE)
+    debug_enable = true;
+#endif
+#ifdef AUTO_MOUSE_LAYER_ENABLE
+    user_config.raw = eeconfig_read_user();
+#endif
+#ifdef ENCODER_ENABLED
+    encoder_initialized = true;
+#endif
+}

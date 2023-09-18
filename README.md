@@ -13,29 +13,62 @@ mtk64e　作成例
 
 ## remap対応 ファームウェア  
 
-!!! Remap [https://qmk.remap-keys.app] のアップデートにより、従来のファームウェア（qmk_firmware 0.16ベース）を使用したキーボードを接続すると、エラーメッセージが表示されマッピング変更ができません。qmk_firmware 0.16ベースのファームウェアでRemapをご使用の場合、旧バージョンのRemap [https://qmk018.remap-keys.app] をご使用ください。!!!
+!!! Remap [https://remap-keys.app] のアップデートにより、従来のファームウェア（qmk_firmware 0.16ベース）を使用したキーボードを接続すると、エラーメッセージが表示されマッピング変更ができません。qmk_firmware 0.16ベースのファームウェアでRemapをご使用の場合、旧バージョンのRemap [https://qmk018.remap-keys.app] をご使用ください。!!!
 
 ### qmk_firmware 0.16ベース ファームウェア [https://qmk018.remap-keys.app] を使用
-- [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
+- [mtk_mtk64_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)
+ rev1基板　右ボール/左ボール/左右ボール用
    
-- [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
+- [mtk_mtk64e_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex)
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用
 
-- [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
+- [mtk_mtk64e_left_ball_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex)
+ rev2基板 PMW3360センサー　右ロータリーエンコーダー、左ボール用
    
-- [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
-- [mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) rev2基板用　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_db.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex)
+ rev2基板 PMW3360センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
 
-- [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex)
+ rev2基板 PMW3360センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
    
-- [mtk_mtk64e_AutoMouseLayer_via_leftball.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex) rev2基板用　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_leftball.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex)
+ rev2基板　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
 
-- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex)
+ rev3基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
-### qmk_firmware 0.22ベース ファームウェア [https://qmk.remap-keys.app] をご使用ください
+### qmk_firmware 0.22ベース ファームウェア [https://remap-keys.app] をご使用ください
 
-- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex)
+ rev3基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_leftball.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_leftball.0.22.hex)
+ rev3基板 PMW3389センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
 
 ## remap用 via.json
 
@@ -53,7 +86,7 @@ mtk64e　作成例
 ## 更新情報
 
 ### qmk_firmware 0.22 ベースになりました
-   Remap [https://qmk.remap-keys.app] のアップデートに対応しました。
+   Remap [https://remap-keys.app] のアップデートに対応しました。
 
    [mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
@@ -148,7 +181,7 @@ TRSケーブルは、ケーブル付け根が本体のケースの中まで入�
 
 ## キーマップ変更
 
-キーマップの変更はChromeブラウザを使用して、https://qmk.remap-keys.app　で変更します。
+キーマップの変更はChromeブラウザを使用して、https://remap-keys.app　で変更します。
 
 （旧バージョンのqmk_firmware 0.16ベースのファームウエアをご使用の場合、https://qmk018.remap-keys.app　で変更します。）
 

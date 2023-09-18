@@ -121,10 +121,27 @@ void keyboard_pre_init_kb(void) {
 void pointing_device_driver_init(void) {
 
 #ifdef ENCODER_ENABLE
-    // The left keyboard uses an encoder to disable the trackball without initializing it.
+// #warning ENCODER_ENABLE is defined.
+#ifdef ENCODER_LEFT_ENABLE
+// #warning ENCODER_LEFT_ENABLE is defined.
+
+    // The left keyboard uses an encoder. to disable the left trackball without initializing it.
 	if(is_keyboard_left()){
 		return ;
 	}
+#else
+// #warning ENCODER_LEFT_ENABLE is not defined.
+#endif
+#
+#ifdef ENCODER_RIGHT_ENABEL
+// #warning ENCODER_RIGHT_ENABEL is defined.
+    // The right keyboard uses an encoder. to disable the right trackball without initializing it.
+	if(!is_keyboard_left()){
+		return ;
+	}
+#else
+// #warning ENCODER_RIGHT_ENABEL is not defined.
+#endif
 #endif
 
 #if KEYBALL_MODEL != 46
@@ -211,8 +228,12 @@ static void motion_to_mouse(keyball_motion_t *m, report_mouse_t *r, bool is_left
     }
 }
 
+#ifndef ENCODER_ENABLE
+// #warning ENCODER_ENABLE is not defined.
 #ifdef SLAVE_SCRL_DISABLE
+// #warning SLAVE_SCRL_DISABLE is defined.
 #if SLAVE_SCRL_DISABLE == 1
+// #warning SLAVE_SCRL_DISABLE is 1.
 
 static void add_motion_to_mouse_move(keyball_motion_t *m, report_mouse_t *r, bool is_left) {
 #if KEYBALL_MODEL == 61 || KEYBALL_MODEL == 39 || KEYBALL_MODEL == 147
@@ -285,6 +306,7 @@ static void add_motion_to_mouse(keyball_motion_t *m, report_mouse_t *r, bool is_
         add_motion_to_mouse_move(m, r, is_left);
     }
 }
+#endif
 #endif
 #endif
 
