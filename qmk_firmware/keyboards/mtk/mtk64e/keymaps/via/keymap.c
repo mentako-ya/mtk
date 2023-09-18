@@ -63,9 +63,6 @@ void eeconfig_init_user(void) {
 }
 
 void keyboard_post_init_user(void) {
-#if defined(CONSOLE_ENABLE)
-    debug_enable = true;
-#endif
     user_config.raw = eeconfig_read_user();
 }
 
@@ -261,6 +258,7 @@ void keyboard_post_init_user(void) {
 #if defined(CONSOLE_ENABLE)
     debug_enable = true;
 #endif
+    keybord_initialized = true;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
