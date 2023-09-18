@@ -1,6 +1,6 @@
 {
   "name": "mtk64",
-  "vendorId": "0x4d59",
+  "vendorId": "0x4D59",
   "productId": "0x0100",
   "matrix": { "rows": 10, "cols": 8 },
   "lighting": "qmk_rgblight",
