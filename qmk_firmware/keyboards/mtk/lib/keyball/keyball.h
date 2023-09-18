@@ -171,6 +171,13 @@ uint8_t keyball_get_cpi(void);
 // TODO: document
 void keyball_set_cpi(uint8_t cpi);
 
-#ifndef SLAVE_SCRL_DISABLE
-#    define  SLAVE_SCRL_DISABLE 0
+// エンコーダー有効時、指定がなければ左エンコーダーを有効化
+#if defined(ENCODER_ENABLE) && !defined(ENCODER_LEFT_ENABLE) && !defined(ENCODER_RIGHT_ENABEL)
+// #warning define ENCODER_LEFT_ENABLE.
+#    define ENCODER_LEFT_ENABLE
+#endif
+
+// 両側ボール用　Slave側スクロール無効化　デフォルトでは未使用
+#if !defined(ENCODER_ENABLE) && !defined(SLAVE_SCRL_DISABLE)
+#    define SLAVE_SCRL_DISABLE 0
 #endif

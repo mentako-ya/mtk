@@ -1,8 +1,7 @@
 /*
 This is the c configuration file for the keymap
 
-Copyright 2022 @Yowkees
-Copyright 2022 MURAOKA Taro (aka KoRoN, @kaoriya)
+Copyright 2023 mentako-ya
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,4 +34,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAP_CODE_DELAY 5
 #define DYNAMIC_KEYMAP_LAYER_COUNT 4
+
+// #### 自動マウスレイヤー切替有効化 ####
 #define AUTO_MOUSE_LAYER_ENABLE
+
+// #### エンコーダー設定 ####
+// 左エンコーダー有効 左ボール無効（デフォルト）
+#define ENCODER_LEFT_ENABLE
+// 右エンコーダー有効 右ボール無効
+//#define ENCODER_RIGHT_ENABEL
+
+// #### 両側ボール設定 ####
+//#undef ENCODER_ENABLE
+// slave側トラックボールをスクロール操作に使用する場合（デフォルト）
+//#define SLAVE_SCRL_DISABLE 0
+// slave側トラックボールをポインター操作に使用する場合
+//#define SLAVE_SCRL_DISABLE 1

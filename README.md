@@ -13,22 +13,62 @@ mtk64e　作成例
 
 ## remap対応 ファームウェア  
 
-!!! Remapのアップデートにより、従来のファームウェアを使用したキーボードを接続するとエラーメッセージが表示されマッピング変更ができません。Remapをご使用の場合、当面の間旧バージョンのRemap https://qmk018.remap-keys.app をご使用ください。!!!
-- [mtk_mtk64_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)   rev1基板用　右ボール/左ボール/左右ボール用
+!!! Remap [https://remap-keys.app] のアップデートにより、従来のファームウェア（qmk_firmware 0.16ベース）を使用したキーボードを接続すると、エラーメッセージが表示されマッピング変更ができません。qmk_firmware 0.16ベースのファームウェアでRemapをご使用の場合、旧バージョンのRemap [https://qmk018.remap-keys.app] をご使用ください。!!!
+
+### qmk_firmware 0.16ベース ファームウェア [https://qmk018.remap-keys.app] を使用
+- [mtk_mtk64_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64_via.hex)
+ rev1基板　右ボール/左ボール/左右ボール用
    
-- [mtk_mtk64e_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用
+- [mtk_mtk64e_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_via.hex)
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用
 
-- [mtk_mtk64e_left_ball_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex) rev2基板用　右ロータリーエンコーダー、左ボール用
+- [mtk_mtk64e_left_ball_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_left_ball_via.hex)
+ rev2基板 PMW3360センサー　右ロータリーエンコーダー、左ボール用
    
-- [mtk_mtk64e_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex) rev2基板用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via.hex)
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
-- [mtk_mtk64e_AutoMouseLayer_via_db.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex) rev2基板用　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_db.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db.hex)
+ rev2基板 PMW3360センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
 
-- [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex) rev2基板用　左右ボール用（両側ポインター）、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_db_noscrl.hex)
+ rev2基板 PMW3360センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
    
-- [mtk_mtk64e_AutoMouseLayer_via_leftball.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex) rev2基板用　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_AutoMouseLayer_via_leftball.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_AutoMouseLayer_via_leftball.hex)
+ rev2基板　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
 
-- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex)
+ rev3基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
+### qmk_firmware 0.22ベース ファームウェア [https://remap-keys.app] をご使用ください
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex)
+ rev3基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_leftball.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_leftball.0.22.hex)
+ rev3基板 PMW3389センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+
+- [mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex]
+(https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via_db.0.22.hex)
+ rev3基板 PMW3389センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
 
 ## remap用 via.json
 
@@ -45,8 +85,14 @@ mtk64e　作成例
 
 ## 更新情報
 
+### qmk_firmware 0.22 ベースになりました
+   Remap [https://remap-keys.app] のアップデートに対応しました。
+
+   [mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.0.22.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+
 ### トラックボールセンサーをPMW3389に更新しました
    トラックボールセンサーをより高性能なPMW3389DM-T3QUに更新しました。
+   
    [PMW3360DM-T2QUとPMW3389DM-T3QUの比較](https://www.pixart.com/products-comparison/7/Optical_Mouse_Sensor)
    
    [mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3389_AutoMouseLayer_via.hex) rev2基板 PMW3389センサー用　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
@@ -135,7 +181,9 @@ TRSケーブルは、ケーブル付け根が本体のケースの中まで入�
 
 ## キーマップ変更
 
-キーマップの変更はChromeブラウザを使用して、https://qmk018.remap-keys.app　で変更します。
+キーマップの変更はChromeブラウザを使用して、https://remap-keys.app　で変更します。
+
+（旧バージョンのqmk_firmware 0.16ベースのファームウエアをご使用の場合、https://qmk018.remap-keys.app　で変更します。）
 
 下記に本キーボードを使用する際に最低限必要な手順を記載します。
 
@@ -144,15 +192,19 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 　https://salicylic-acid3.hatenablog.com/entry/remap-manual
 
 1. [START REMAP FOR YOUR KEYBORD]　をクリック
+
 <img width="500" src="mtk/remap_img/remap_1.png">
 
 2. [+ KEYBORD]をクリック
+
 <img width="500" src="mtk/remap_img/remap_2.png">
 
 3. [mtk64] か。[mtk64e]を選択して接続.
+
 <img width="250" src="mtk/remap_img/remap_3.png">
 
 4. Jsonファイルのアップロードを求められるので、下記からレイアウトに合わせたjsonファイルをダウンロードして使用する
+
 <img width="500" src="mtk/remap_img/remap_4.png">
 
 - mtk64 右ボール用 [mtk64_rb_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_rb_via.json)
@@ -162,16 +214,19 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 5. キーマップの変更 / キーマップの書き込み（右上Flashボタン） /　変更したキーマップの保存　/　キーマップのPDFダウンロード　などが可能
 
 右ボール　キーマップサンプル
+
 - via keyleyout(right ball) [mtk64_rb_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_rb_via.json)
 - sample keymap cheetsheet(right ball) [mtk64_rb_keymap_cheatsheet.pdf](mtk/mtk64_rb_keymap_cheatsheet.pdf)
 <img width="1186" alt="remap_key_leyout" src="mtk/remap_img/mtk64_rb_keymap.png">
 
 左右ボール　キーマップサンプル
+
 - via keyleyout(double ball) [mtk64_db_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_db_via.json)
 - sample keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
 <img width="1186" alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
 
 mtk64e ロータリーエンコーダー＆ボール、左右ボール　キーマップサンプル
+
 - via keyleyout(rotary encoder) [mtk64e_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64e_via.json)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf](mtk/mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf)
@@ -216,41 +271,41 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
 
 
 ## レイヤー３トラックボール設定のコード値
-レイヤー３にマッピングされているキーのうち、トラックボールの設定を行うキーは、１６進数のカスタムコードで設定します。
+レイヤー３にマッピングされているキーのうち、トラックボールの設定を行うキーは、User0 ~（旧バージョンRemapでは16進数）のカスタムコードで設定します。
 
 コード値については下記の表を参照してください。
 
 
 ### レイヤー３トラックボール設定のコード値　mtk64　（mtk_mtk64_via.hex/mtk_mtk64e_via.hex）
-- 0x5DA5:KBC_RST    トラックボール設定リセット
-- 0x5DA6:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
-- 0x5DA7:CPI_I100   トラックボールのカーソル速度 +100
-- 0x5DA8:CPI_D100   トラックボールのカーソル速度 -100
-- 0x5DA9:CPI_I1K    トラックボールのカーソル速度  +1000
-- 0x5DAA:CPI_D1K    トラックボールのカーソル速度 -1000
-- 0x5DAB:SCRL_TO    トラックボールのスクロールモードOn/Off
-- 0x5DAC:SCRL_MO    トラックボールのスクロールモードOn
-- 0x5DAD:SCRL_DVI   トラックボールのスクロール速度を下げる
-- 0x5DAE:SCRL_DVD   トラックボールのスクロール速度を上げる
+- User 0:0x5DA5:KBC_RST    トラックボール設定リセット
+- User 1:0x5DA6:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
+- User 2:0x5DA7:CPI_I100   トラックボールのカーソル速度 +100
+- User 3:0x5DA8:CPI_D100   トラックボールのカーソル速度 -100
+- User 4:0x5DA9:CPI_I1K    トラックボールのカーソル速度  +1000
+- User 5:0x5DAA:CPI_D1K    トラックボールのカーソル速度 -1000
+- User 6:0x5DAB:SCRL_TO    トラックボールのスクロールモードOn/Off
+- User 7:0x5DAC:SCRL_MO    トラックボールのスクロールモードOn
+- User 8:0x5DAD:SCRL_DVI   トラックボールのスクロール速度を下げる
+- User 9:0x5DAE:SCRL_DVD   トラックボールのスクロール速度を上げる
 
-### レイヤー３トラックボール設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DB1:KBC_RST    トラックボール設定リセット
-- 0x5DB2:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
-- 0x5DB3:CPI_I100   トラックボールのカーソル速度 +100
-- 0x5DB4:CPI_D100   トラックボールのカーソル速度 -100
-- 0x5DB5:CPI_I1K    トラックボールのカーソル速度 +1000
-- 0x5DB6:CPI_D1K    トラックボールのカーソル速度 -1000
-- 0x5DB7:SCRL_TO    トラックボールのスクロールモードOn/Off
-- 0x5DB8:SCRL_MO    トラックボールのスクロールモードOn
-- 0x5DB9:SCRL_DVI   トラックボールのスクロール速度を下げる
-- 0x5DBA:SCRL_DVD   トラックボールのスクロール速度を上げる
+### レイヤー３トラックボール設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.0.22.hex）
+- User 0:0x5DB1:KBC_RST    トラックボール設定リセット
+- User 1:0x5DB2:KBC_SAVE   トラックボール設定保存（次回接続時にトラックボール設定が保存された値になっている）
+- User 2:0x5DB3:CPI_I100   トラックボールのカーソル速度 +100
+- User 3:0x5DB4:CPI_D100   トラックボールのカーソル速度 -100
+- User 4:0x5DB5:CPI_I1K    トラックボールのカーソル速度 +1000
+- User 5:0x5DB6:CPI_D1K    トラックボールのカーソル速度 -1000
+- User 6:0x5DB7:SCRL_TO    トラックボールのスクロールモードOn/Off
+- User 7:0x5DB8:SCRL_MO    トラックボールのスクロールモードOn
+- User 8:0x5DB9:SCRL_DVI   トラックボールのスクロール速度を下げる
+- User 9:0x5DBA:SCRL_DVD   トラックボールのスクロール速度を上げる
 
-### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.hex）
-- 0x5DBB:KC_TG_CLICKABLE     自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
-- 0x5DBC:KC_TO_CLICKABLE_INC 自動マウスレイヤー切替距離 +
-- 0x5DBD:KC_TO_CLICKABLE_DEC 自動マウスレイヤー切替距離 -
-- 0x5DBE:KC_TO_RESET_INC     自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
-- 0x5DBF:KC_TO_RESET_DEC.    自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
+### レイヤー３自動マウスレイヤー切替設定のコード値　mtk64e自動マウスレイヤー　（mtk_mtk64e_AutoMouseLayer_via.0.22.hex）
+- User10:0x5DBB:KC_TG_CLICKABLE     自動マウスレイヤー切替On/Off (有効時にOLEDを反転表示）
+- User11:0x5DBC:KC_TO_CLICKABLE_INC 自動マウスレイヤー切替距離 +
+- User12:0x5DBD:KC_TO_CLICKABLE_DEC 自動マウスレイヤー切替距離 -
+- User13:0x5DBE:KC_TO_RESET_INC     自動マウスレイヤーから元のレイヤーに戻る時間 + 0.1秒
+- User14:0x5DBF:KC_TO_RESET_DEC.    自動マウスレイヤーから元のレイヤーに戻る時間 - 0.1秒
  
 ## 左右トラックボール構成の動作
 
@@ -264,8 +319,8 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
 ボールとボールケースの白い支持球はこまめに掃除していただくと、滑りがよくなり快適に使用できます。
 
 白い支持球周辺に埃が溜まりますので、時々ボールを外してメガネ拭きなどで掃除してください。
-ボールの滑りが悪いと、狙ったところをカーソルが飛び越してしまい、非常に使いづらくなります。
+ボールの滑りが悪いと、狙ったところをカーソルが飛び越してしまい、使いづらくなります。
 
-ボールに[シリコンスプレー](https://www.amazon.co.jp/dp/B000TGHTF4)を少量塗布して、ティッシュ、メガネ拭き、[キムワイプ](https://www.amazon.co.jp/dp/B001EHI9XI)などで軽く拭っていただくと、劇的に滑りが良くなり、操作性が向上します。
+ボールに[シリコンスプレー](https://amzn.asia/d/2fwdtvX)を少量塗布して、ティッシュ、メガネ拭き、[キムワイプ](https://www.amazon.co.jp/dp/B001EHI9XI)などで軽く拭っていただくと、滑りが良くなり、操作性が向上します。
 
 定期的にシリコンを塗布する必要がありますが、シリコンスプレーは1本あれば数年使用できます。
