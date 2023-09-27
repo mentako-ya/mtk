@@ -11,6 +11,10 @@ mtk64e　作成例
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
 
+[insnote](https://insnote.net)様にてmtk64eのレビューを掲載いただきました。　https://insnote.net/homebrewkeyboard-mtk64e_review/
+
+mtk64eの使用感、カスタマイズなどご紹介いただいております。導入をご検討されている方はぜひご一読ください。
+
 ## remap対応 ファームウェア  
 
 !!! Remap https://remap-keys.app のアップデートにより、従来のファームウェア（qmk_firmware 0.16ベース）を使用したキーボードを接続すると、エラーメッセージが表示されマッピング変更ができません。
