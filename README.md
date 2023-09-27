@@ -43,19 +43,19 @@ https://remap-keys.app をご利用の場合、qmk_firmware 0.22ベースのフ�
 <details>
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via.0.22.hex)
- rev2基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_leftball.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_leftball.0.22.hex)
- rev2基板 PMW3389センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db_noscrl.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
 
 </details>
 
