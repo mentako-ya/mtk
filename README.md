@@ -11,6 +11,10 @@ mtk64e　作成例
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
 
+[insnote](https://insnote.net)様にてmtk64eのレビューを掲載いただきました。　https://insnote.net/homebrewkeyboard-mtk64e_review/
+
+mtk64eの使用感、カスタマイズなどご紹介いただいております。導入をご検討されている方はぜひご一読ください。
+
 ## remap対応 ファームウェア  
 
 !!! Remap https://remap-keys.app のアップデートにより、従来のファームウェア（qmk_firmware 0.16ベース）を使用したキーボードを接続すると、エラーメッセージが表示されマッピング変更ができません。
@@ -43,19 +47,19 @@ https://remap-keys.app をご利用の場合、qmk_firmware 0.22ベースのフ�
 <details>
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via.0.22.hex)
- rev2基板 PMW3389センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左ロータリーエンコーダー、右ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_leftball.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_leftball.0.22.hex)
- rev2基板 PMW3389センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　右ロータリーエンコーダー、左ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用（Master側ポインター、Slabe側スクロール）、自動マウスレイヤー切替
 
 - [mtk_mtk64e_PMW3360_AutoMouseLayer_via_db.0.22.hex](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk_mtk64e_PMW3360_AutoMouseLayer_via_db_noscrl.0.22.hex)
- rev2基板 PMW3389センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
+ rev2基板 PMW3360センサー　左右ボール用（両側ポインター）、自動マウスレイヤー切替
 
 </details>
 
