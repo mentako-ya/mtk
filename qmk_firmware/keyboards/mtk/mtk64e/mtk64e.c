@@ -49,3 +49,12 @@ void keyball_on_adjust_layout(keyball_adjust_t v) {
     rgblight_set_effect_range(0, lednum_this + lednum_that);
 #endif
 }
+
+#ifdef ENCODER_ENABLE
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+	if (!encoder_update_user(index, clockwise)) {
+		return false;
+	}
+    return true;
+}
+#endif

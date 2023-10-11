@@ -402,7 +402,7 @@ void keyboard_post_init_user(void) {
 #ifdef AUTO_MOUSE_LAYER_ENABLE
     user_config.raw = eeconfig_read_user();
 #endif
-#ifdef ENCODER_ENABLED
+#ifdef ENCODER_ENABLE
     encoder_initialized = true;
 #endif
 }
