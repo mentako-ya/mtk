@@ -1,12 +1,32 @@
 # mtk
 
-mtk is clone keybord with trackball.
+homebrew keyboard with thumb operated trackball & rotary encoder.
 
-<img width="１０００" src="mtk/photo/mtk64e.JPG">
-mtk64e　作成例
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_normal.jpg">
 
+mtk64el 作例
 - キーキャップ:CORSAIR PBT DOUBLE-SHOT 交換用カラーキーキャップセット - 日本語108キー, Arctic White - CH-9911040-JP
-- トラックボール：ぺリックス PERIPRO-303 GR 34 mm
+- トラックボール：ぺリックス PERIPRO-303 GP 34 mm
+
+<img width="500" src="mtk/photo/mtk64el/mtk64el_tent.png">
+
+テントスタンド [プリント用3Dデータ](mtk/design/mtk64elt_STL/rev2/mtk64elt_TentLeg_RH_rev2.stl) 
+
+
+
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_lowprofile.jpg">
+
+mtk64el ロープロファイルオプション 作例
+
+<img width="500" src="mtk/photo/mtk64el/mtk64el_lowpro_case.png">
+
+[ロープロファイルケースプリント用3Dデータ](mtk/design/mtk64elt_STL/rev2/lowprofile) 
+
+
+
+<img width="1000" src="mtk/photo/mtk64e.JPG">
+
+mtk64e　作例
 
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
@@ -110,6 +130,21 @@ https://remap-keys.app をご利用の場合、qmk_firmware 0.22ベースのフ�
 ## 更新情報
 
 <details>
+
+### mtk64el になりました
+   親指末端のキーを手前斜め下、親指側面で押下する位置に配置しました。
+
+   親指部分にCherryMX互換キーを使用する場合でも、末端のキーのみロープロファイルで使用する設計です。
+   
+   全キーロープロファイル化が可能になりました。
+  
+   ロープロファイルキーはGateron Low Profile 2.0 (KS-33) を使用します
+
+   トラックボールケースの形状を変更してボールが落ちにくくなりました。
+   
+   LEDはアンダーグローのみになりました。
+
+   ファームウェアはmtk64eと共通です。
 
 ### ファームウェアが　qmk_firmware 0.22 ベースになりました
    ファームウェアを　qmk_firmware 0.22 ベースに更新しました。
