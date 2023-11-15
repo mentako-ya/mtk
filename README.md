@@ -1,12 +1,32 @@
 # mtk
 
-mtk is clone keybord with trackball.
+homebrew keyboard with thumb operated trackball & rotary encoder.
 
-<img width="１０００" src="mtk/photo/mtk64e.JPG">
-mtk64e　作成例
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_normal.jpg">
 
+mtk64el 作例
 - キーキャップ:CORSAIR PBT DOUBLE-SHOT 交換用カラーキーキャップセット - 日本語108キー, Arctic White - CH-9911040-JP
-- トラックボール：ぺリックス PERIPRO-303 GR 34 mm
+- トラックボール：ぺリックス PERIPRO-303 GP 34 mm
+
+<img width="500" src="mtk/photo/mtk64el/mtk64el_tent.png">
+
+テントスタンド [プリント用3Dデータ](mtk/design/mtk64elt_STL/rev2/mtk64elt_TentLeg_RH_rev2.stl) 
+
+
+
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_lowprofile.jpg">
+
+mtk64el ロープロファイルオプション 作例
+
+<img width="500" src="mtk/photo/mtk64el/mtk64el_lowpro_case.png">
+
+[ロープロファイルケースプリント用3Dデータ](mtk/design/mtk64elt_STL/rev2/lowprofile) 
+
+
+
+<img width="1000" src="mtk/photo/mtk64e.JPG">
+
+mtk64e　作例
 
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
