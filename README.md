@@ -16,19 +16,28 @@ mtk64el ロープロファイル 作例
 
 <img width="1000" src="mtk/photo/mtk64el/mtk64el_low_Lofree_choc.jpeg">
 
-mtk64el ロープロファイル(Lofree Shadow + Chock V1) 作例
+mtk64el ロープロファイル(Lofree + Chock V1) 作例
+- キースイッチ(メイン部分):[LOFREE x KAILH Full POM Low Profile Switches](https://amzn.asia/d/74pwfkn)
+- キーキャップ(メイン部分):[XVX ロープロファイル PBT キーキャップ](https://amzn.asia/d/7V1A6T4)
+- キースイッチ(親指部分):[Kailhロープロファイルスイッチ - Pink](https://amzn.asia/d/bSlNIMm)
+- キーキャップ(親指部分):[Chocfox CFX keycap](https://talpkeyboard.net/items/638b518dcc223746ee14eae8)
+
 
 <img width="1000" src="mtk/photo/mtk64el/mtk64el_low_Lofree.jpeg">
 
-mtk64el ロープロファイル(Lofree Shadowスイッチ) 作例
+mtk64el Lofree Full POM ロープロファイルスイッチ取り付け例
+- [LOFREE x KAILH Full POM Low Profile Switches](https://amzn.asia/d/74pwfkn)
+
 
 <img width="1000" src="mtk/photo/mtk64el/mtk64el_topPlate.jpg">
 
-mtk64el トッププレート
+mtk64el MX互換キースイッチ取り付け用トッププレート
+
 
 <img width="1000" src="mtk/photo/mtk64el/mtk64el_back.jpeg">
 
 mtk64el アンダーグロー
+
 
 <img width="500" src="mtk/photo/mtk64el/mtk64el_tent_rend1.png">
 <img width="500" src="mtk/photo/mtk64el/mtk64el_tent_rend2.png">
@@ -43,6 +52,7 @@ Chock V1スイッチ / Lofree Shadowスイッチ / MX互換スイッチ
 
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
+
 
 [insnote](https://insnote.net)様にてmtk64eのレビューを掲載いただきました。　https://insnote.net/homebrewkeyboard-mtk64e_review/
 
@@ -304,12 +314,14 @@ remapの一般的な使用方法はサリチル酸さんの記事などをご参
 
 - via keyleyout(right ball) [mtk64_rb_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_rb_via.json)
 - sample keymap cheetsheet(right ball) [mtk64_rb_keymap_cheatsheet.pdf](mtk/mtk64_rb_keymap_cheatsheet.pdf)
+
 <img width="1186" alt="remap_key_leyout" src="mtk/remap_img/mtk64_rb_keymap.png">
 
 左右ボール　キーマップサンプル
 
 - via keyleyout(double ball) [mtk64_db_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64_db_via.json)
 - sample keymap cheetsheet(double ball) [mtk64_db_keymap_cheatsheet.pdf](mtk/mtk64_db_keymap_cheatsheet.pdf)
+
 <img width="1186" alt="remap_key_leyout_double_ball" src="mtk/remap_img/mtk64_db_keymap.png">
 
 mtk64e ロータリーエンコーダー＆ボール、左右ボール　キーマップサンプル
@@ -317,6 +329,7 @@ mtk64e ロータリーエンコーダー＆ボール、左右ボール　キー�
 - via keyleyout(rotary encoder) [mtk64e_via.json](https://raw.githubusercontent.com/mentako-ya/mtk/main/mtk/mtk64e_via.json)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_keymap_cheatsheet.pdf](mtk/mtk64e_keymap_cheatsheet.pdf)
 - sample keymap cheetsheet(rotary encoder) [mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf](mtk/mtk64e_AutoMouseLayer_keymap_cheatsheet.pdf)
+
 <img width="1186" alt="remap_key_leyout_rotary_encoder" src="mtk/remap_img/mtk64e_keymap.png">
 
 ※ 製品出荷時点でキーボードに設定済みのマッピングは、ファームウェアのデフォルトキーマッピングとは一部異なる場合があります。
