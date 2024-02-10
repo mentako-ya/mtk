@@ -10,25 +10,36 @@ mtk64el 作例
 - TRRSケーブル：https://shop.dailycraft.jp/products/trrs_cable_50_gloss
 - USB Type-cケーブル：https://amzn.asia/d/h8pfZIJ
 
-<img width="500" src="mtk/photo/mtk64el/mtk64el_tent.png">
-
-テントスタンド [プリント用3Dデータ右](mtk/design/mtk64elt_STL/rev2/mtk64elt_TentLeg_RH_rev2.stl) [プリント用3Dデータ左](mtk/design/mtk64elt_STL/rev2/mtk64elt_TentLeg_LH_rev2.stl) 
-
-
-
 <img width="1000" src="mtk/photo/mtk64el/mtk64el_lowprofile.jpg">
 
-mtk64el ロープロファイルオプション 作例
+mtk64el ロープロファイル 作例
 
-<img width="500" src="mtk/photo/mtk64el/mtk64el_lowpro_case.png">
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_low_Lofree_choc.jpeg">
 
-[ロープロファイルケースプリント用3Dデータ](mtk/design/mtk64elt_STL/rev2/lowprofile) 
+mtk64el ロープロファイル(Lofree Shadow + Chock V1) 作例
+
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_low_Lofree.jpeg">
+
+mtk64el ロープロファイル(Lofree Shadowスイッチ) 作例
+
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_topPlate.jpg">
+
+mtk64el トッププレート
+
+<img width="1000" src="mtk/photo/mtk64el/mtk64el_back.jpeg">
+
+mtk64el アンダーグロー
+
+<img width="500" src="mtk/photo/mtk64el/mtk64el_tent_rend1.png">
+<img width="500" src="mtk/photo/mtk64el/mtk64el_tent_rend2.png">
+<img width="500" src="mtk/photo/mtk64el/mtk64el_tent_rend3.png">
+
+[rev3ケースプリント用3Dデータ](mtk/design/mtk64elt_STL/rev3)　/ テントスタンド[3Dデータ右](mtk/design/mtk64elt_STL/rev3/mtk64el_rev3_tent_RH.stl)　/ [3Dデータ左](mtk/design/mtk64elt_STL/rev3/mtk64el_rev3_tent_LH.stl) 
 
 
+<img width="500" src="mtk/photo/mtk64el/mtk64el_switch.jpeg"><img width="500" src="mtk/photo/mtk64el/mtk64el_switches.jpeg">
 
-<img width="1000" src="mtk/photo/mtk64e.JPG">
-
-mtk64e　作例
+Chock V1スイッチ / Lofree Shadowスイッチ / MX互換スイッチ
 
 <img width="500" src="mtk/photo/encoder.JPG">　<img width="500" src="mtk/photo/bord.JPG">
 <img width="500" src="mtk/photo/type-c.JPG">
@@ -132,6 +143,10 @@ https://remap-keys.app をご利用の場合、qmk_firmware 0.22ベースのフ�
 ## 更新情報
 
 <details>
+
+### mtk64el rev3ケースデータを追加しました
+
+   [rev3ケースデータ](mtk/design/mtk64elt_STL/rev3)
 
 ### mtk64el になりました
    親指末端のキーを手前斜め下、親指側面で押下する位置に配置しました。
