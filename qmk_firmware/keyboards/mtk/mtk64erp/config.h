@@ -50,14 +50,37 @@
 //#define SPLIT_POINTING_ENABLE
 
 // Trackball  parameters
-// #ifdef POINTING_DEVICE_ENABLE
+#ifdef POINTING_DEVICE_ENABLE
 
-// /* cocot */
 // // #    undef RP_SPI_USE_SPI0
 // // #    define RP_SPI_USE_SPI0 TRUE
 // // #    undef RP_SPI_USE_SPI1
 // // #    define RP_SPI_USE_SPI1 FALSE
 // // #    define SPI_DRIVER SPID0
+
+
+// #    define PMW33XX_CS_PIN GP13
+// // SPI1 SCK
+// #    define SPI_SCK_PIN GP14
+// // SPI1 RX
+// #    define SPI_MISO_PIN GP12
+// // SPI1 TX
+// #    define SPI_MOSI_PIN GP15
+
+#endif
+// /* cocot */
+
+// #    undef RP_SPI_USE_SPI0
+// #    define RP_SPI_USE_SPI0 FLASE
+// #    undef RP_SPI_USE_SPI1
+// #    define RP_SPI_USE_SPI1 TRUE
+#    define SPI_DRIVER SPID1
+
+#    define SPI_SCK_PIN GP14
+#    define SPI_MISO_PIN GP12
+#    define SPI_MOSI_PIN GP15
+#    define PMW33XX_CS_PIN GP13
+#    define POINTING_DEVICE_CS_PIN GP13
 // #    undef RP_SPI_USE_SPI0
 // #    define RP_SPI_USE_SPI0 FALSE
 // #    undef RP_SPI_USE_SPI1
@@ -67,7 +90,7 @@
 // /* keyball */
 // // #    define SPI_SCK_PIN B1
 // // #    define SPI_MISO_PIN B3
-// // #    define SPI_MOSI_PIN B2
+// // #    define SPI_MOSI_PIN B2ß
 // /* cocot */
 // // #    define SPI_SCK_PIN GP2
 // // #    define SPI_MISO_PIN GP4    //RX

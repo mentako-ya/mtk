@@ -6,6 +6,10 @@
 #include QMK_KEYBOARD_H
 #include "quantum.h"
 
+#ifdef CONSOLE_ENABLE
+  #include <print.h>
+#endif
+
 //////////////////////////////////////////////////////////////////////////////
 
 // clang-format off
@@ -137,3 +141,11 @@ void keyboard_post_init_user(void) {
     encoder_initialized = true;
 #endif
 }
+
+#ifdef CONSOLE_ENABLE
+void matrix_init_kb(void) {
+  debug_enable = true;
+  debug_matrix = true;
+  debug_mouse  = true;
+}
+#endif
