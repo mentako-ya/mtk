@@ -20,10 +20,10 @@
 //#define NO_ACTION_ONESHOT
 
 // Key matrix parameters (duplex matrix)
-#define MATRIX_ROWS         (6 * 2)  // split keyboard
-#define MATRIX_COLS         (4 * 2)  // duplex matrix
-#define MATRIX_ROW_PINS     { GP4, GP5, GP6, GP7, GP8}
-#define MATRIX_COL_PINS     { GP29, GP28, GP27, GP26 }
+#define MATRIX_ROWS         (7 * 2)  // split keyboard
+#define MATRIX_COLS         (7)      // squared matrix
+#define MATRIX_ROW_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
+#define MATRIX_COL_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
 #define MATRIX_MASKED
 #define DEBOUNCE            5
 
@@ -31,8 +31,8 @@
 #ifdef ENCODER_ENABLE
 // #define ENCODERS_PAD_A { B6, B3 }
 // #define ENCODERS_PAD_B { B5, B2 }
-#define ENCODERS_PAD_A { GP21, GP20 }
-#define ENCODERS_PAD_B { GP9, GP23 }
+# define ENCODERS_PAD_A { GP27 }
+# define ENCODERS_PAD_B { GP26 }
 #define ENCODER_RESOLUTION 2
 #endif
 
@@ -51,7 +51,13 @@
 
 // Trackball  parameters
 #ifdef POINTING_DEVICE_ENABLE
+#    define SPI_SCK_PIN GP14
+#    define SPI_MISO_PIN GP12
+#    define SPI_MOSI_PIN GP15
 
+#    define POINTING_DEVICE_CS_PIN GP13
+#    define PMW33XX_CPI 500
+#    define PMW33XX_CS_DIVISOR 64
 // // #    undef RP_SPI_USE_SPI0
 // // #    define RP_SPI_USE_SPI0 TRUE
 // // #    undef RP_SPI_USE_SPI1

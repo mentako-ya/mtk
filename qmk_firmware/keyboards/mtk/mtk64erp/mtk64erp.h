@@ -9,27 +9,32 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // clang-format off
 #define LAYOUT_mtk64erp( \
-    L00, L01, L02, L03, L04, L05,              R05, R04, R03, R02, R01, R00, \
-    L10, L11, L12, L13, L14, L15,              R15, R14, R13, R12, R11, R10, \
-    L20, L21, L22, L23, L24, L25,              R25, R24, R23, R22, R21, R20, \
-    L30, L31, L32, L33, L34, L35, L36,    R36, R35, R34, R33, R32, R31, R30, \
-    L40, L41,                L45, L46,    R46, R45,                R41, R40, \
-              E4P,      E3P,      L43,    R43,      E2P,      E1P,           \
-			E4L,E4R,  E3L,E3R,    L42,    R42,    E2L,E2R,  E1L,E1R          \
+    L01, L02, L03, L04, L05, L06              R05, R04, R03, R02, R01, R00, \
+    L10, L12, L13, L14, L15, L16              R15, R14, R13, R12, R11, R10, \
+    L20, L21, L23, L24, L25, L26              R25, R24, R23, R22, R21, R20, \
+    L30, L31, L32, L34, L35, L36, L51,    R51, R35, R34, R33, R32, R31, R30, \
+    L40, L41,                L52, L53,    R53, R52,                R41, R40, \
+              L46,      L64,      L54,    R54,      E64,      E46,           \
+			E4L,E4R,  E3L,E3R,    L56,    R56,    E2L,E2R,  E1L,E1R          \
 	) \
     { \
-        {   L00,   L01,   L02, KC_NO,   L03,   L04,   L05, KC_NO }, \
-        {   L10,   L11,   L12,   E4P,   L13,   L14,   L15,   E3P }, \
-        {   L20,   L21,   L22, KC_NO,   L23,   L24,   L25, KC_NO }, \
-        {   L30,   L31,   L32, KC_NO,   L33,   L34,   L35,   L36 }, \
-        {   L40,   L41, KC_NO, KC_NO,   L42,   L43,   L45,   L46 }, \
-        {   E4R,   E4L,   E3R,   E3L, KC_NO, KC_NO, KC_NO, KC_NO }, \
-        {   R00,   R01,   R02, KC_NO,   R03,   R04,   R05, KC_NO }, \
-        {   R10,   R11,   R12,   E1P,   R13,   R14,   R15,   E2P }, \
-        {   R20,   R21,   R22, KC_NO,   R23,   R24,   R25, KC_NO }, \
-        {   R30,   R31,   R32, KC_NO,   R33,   R34,   R35,   R36 }, \
-        {   R40,   R41, KC_NO, KC_NO,   R42,   R43,   R45,   R46 }, \
-        {   E1L,   E1R,   E2L,   E2R, KC_NO, KC_NO, KC_NO, KC_NO }  \
+        {   L01,   L02,   L03,   L04,   L05,   L06}, \
+        {   L10,   L12,   L13,   L14,   L15,   L16}, \
+        {   L20,   L21,   L23,   L24,   L25,   L26}, \
+        {   L30,   L31,   L32,   L34,   L35,   L36}, \
+        {   L40,   L41,   L42,   L43    L45,   L46}, \
+        {   L50,   L51,   L52,   L53,   L54,   L56}, \
+        {   L60,   L61,   L62,   L63,   L64,   L65}, \
+        {   E4R,   E4L,   E3R,   E3L, KC_NO, KC_NO}, \
+        \
+        {   R01,   R02,   R03,   R04,   R05, KC_NO }, \
+        {   R10,   R12,   R13,   R14,   R15,   E1P }, \
+        {   R20,   R21,   R23,   R24,   R25,   E2P }, \
+        {   R30,   R31,   R32,   R34,   R35,   R36 }, \
+        {   R40,   R41,   R42,   R43    R45,   R46 }, \
+        {   R50,   R51,   R52,   R53,   R54,   R56}, \
+        {   R60,   R61,   R62,   R63,   R64,   R65}, \
+        {   E1R,   E1L,   E2R,   E2L, KC_NO, KC_NO }, \
     }
 // clang-format on
 
