@@ -1,0 +1,55 @@
+{
+    "manufacturer": "mentako-ya",
+    "keyboard_name": "mtk/encoder_map_test",
+    "maintainer": "mentako-ya",
+    "bootloader": "rp2040",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "encoder": true,
+        "nkro": true
+    },
+    "matrix_pins": {
+        "cols": ["GP28", "GP27", "GP26", "GP22"],
+        "rows": ["GP20", "GP23", "GP21", "NO_PIN"]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP6", "pin_b": "GP7", "resolution": 2 },
+            { "pin_a": "GP8", "pin_b": "GP9", "resolution": 2 }
+        ]
+    },
+    "processor": "RP2040",
+    "url": "",
+    "usb": {
+        "vid": "0x4D59",
+        "pid": "0x0900",
+        "device_version": "0.1.0"
+    },
+    "layouts": {
+        "LAYOUT_ortho_4x4": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0},
+                {"matrix": [0, 1], "x": 1, "y": 0},
+                {"matrix": [0, 2], "x": 2, "y": 0},
+                {"matrix": [0, 3], "x": 3, "y": 0},
+                {"matrix": [1, 0], "x": 0, "y": 1},
+                {"matrix": [1, 1], "x": 1, "y": 1},
+                {"matrix": [1, 2], "x": 2, "y": 1},
+                {"matrix": [1, 3], "x": 3, "y": 1},
+                {"matrix": [2, 0], "x": 0, "y": 2},
+                {"matrix": [2, 1], "x": 1, "y": 2},
+                {"matrix": [2, 2], "x": 2, "y": 2},
+                {"matrix": [2, 3], "x": 3, "y": 2},
+                {"matrix": [3, 0], "x": 0, "y": 3},
+                {"matrix": [3, 1], "x": 1, "y": 3},
+                {"matrix": [3, 2], "x": 2, "y": 3},
+                {"matrix": [3, 3], "x": 3, "y": 3}
+            ]
+        }
+    }
+}
