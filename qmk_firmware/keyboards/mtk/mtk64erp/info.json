@@ -5,14 +5,13 @@
     "maintainer": "mentako-ya",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
-    
-
     "features": {
         "bootmagic": false,
         "command": false,
-        "console": false,
+        "console": true,
         "extrakey": true,
         "mousekey": true,
+        "encoder": true,
         "nkro": true
     },
     "processor": "RP2040",
@@ -22,9 +21,19 @@
         "pid": "0x0300",
         "device_version": "3.0.0"
     },
+    "matrix_pins": {
+        "cols": ["GP28", "GP27", "GP26", "GP22", "GP20", "GP23", "GP21"],
+        "rows": ["GP28", "GP27", "GP26", "GP22", "GP20", "GP23", "GP21"]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP6", "pin_b": "GP7", "resolution": 2 },
+            { "pin_a": "GP8", "pin_b": "GP9", "resolution": 2 }
+        ]
+    },
     "layouts": {
-        "LAYOUT_mtk64erp": {
-          "layout": [
+        "LAYOUT": {
+            "layout": [
               { "label": "L01", "x": 1, "y": 0 },
               { "label": "L02", "x": 2, "y": 0 },
               { "label": "L03", "x": 3, "y": 0 },
@@ -51,7 +60,7 @@
               { "label": "R12", "x":11, "y": 1 },
               { "label": "R10", "x":13, "y": 1 },
     
-              { "label": "L20", "x": 0, "y": 2 },
+              { "label": "L20",  "x": 0, "y": 2 },
               { "label": "L21", "x": 1, "y": 2 },
               { "label": "L23", "x": 3, "y": 2 },
               { "label": "L24", "x": 4, "y": 2 },
@@ -79,14 +88,8 @@
     
               { "label": "L40", "x": 0, "y": 4 },
               { "label": "L41", "x": 1, "y": 4 },
-              { "label": "L42", "x": 2, "y": 4 },
-              { "label": "L43", "x": 3, "y": 4 },
-              { "label": "L45", "x": 5, "y": 4 },
               { "label": "L46", "x": 6, "y": 4 },
               { "label": "R46", "x": 7, "y": 4 },
-              { "label": "R45", "x": 8, "y": 4 },
-              { "label": "R43", "x":10, "y": 4 },
-              { "label": "R42", "x":11, "y": 4 },
               { "label": "R41", "x":12, "y": 4 },
               { "label": "R40", "x":13, "y": 4 },
 
@@ -95,36 +98,36 @@
               { "label": "L52", "x": 2, "y": 5 },
               { "label": "L53", "x": 3, "y": 5 },
               { "label": "L54", "x": 4, "y": 5 },
-              { "label": "L56", "x": 6, "y": 5 },
-              { "label": "R56", "x": 7, "y": 5 },
               { "label": "R54", "x": 9, "y": 5 },
               { "label": "R53", "x":10, "y": 5 },
               { "label": "R52", "x":11, "y": 5 },
               { "label": "R51", "x":12, "y": 5 },
               { "label": "R50", "x":13, "y": 5 },
 
-              { "label": "L61", "x": 0, "y": 5 },
-              { "label": "L62", "x": 1, "y": 5 },
-              { "label": "L63", "x": 2, "y": 5 },
-              { "label": "L64", "x": 3, "y": 5 },
-              { "label": "L65", "x": 5, "y": 5 },
-              { "label": "R65", "x": 8, "y": 5 },
-              { "label": "R64", "x": 9, "y": 5 },
-              { "label": "R63", "x":10, "y": 5 },
-              { "label": "R62", "x":11, "y": 5 },
-              { "label": "R61", "x":12, "y": 5 },
-              { "label": "R60", "x":13, "y": 5 },
-  
-              { "label": "E4L", "x": 2, "y": 7 },
-              { "label": "E4R", "x": 3, "y": 7 },
-              { "label": "E3L", "x": 4, "y": 7 },
-              { "label": "E3R", "x": 5, "y": 7 },
-              { "label": "E2L", "x": 9, "y": 7 },
-              { "label": "E2R", "x":10, "y": 7 },
-              { "label": "E1L", "x":11, "y": 7 },
-              { "label": "E1R", "x":12, "y": 7 }
-  
+              { "label": "L60", "x": 0, "y": 6 },
+              { "label": "L61", "x": 1, "y": 6 },
+              { "label": "L62", "x": 2, "y": 6 },
+              { "label": "L63", "x": 3, "y": 6 },
+              { "label": "L64", "x": 4, "y": 6 },
+              { "label": "R64", "x": 9, "y": 6 },
+              { "label": "R63", "x":10, "y": 6 },
+              { "label": "R62", "x":11, "y": 6 },
+              { "label": "R61", "x":12, "y": 6 },
+              { "label": "R60", "x":13, "y": 6 }  
             ]
+        }
+    },
+    "split": {
+        "enabled": true,
+        "matrix_pins": {
+            "right":{
+                "cols": ["GP28", "GP27", "GP26", "GP22", "GP20", "GP23", "GP21"],
+                "rows": ["GP28", "GP27", "GP26", "GP22", "GP20", "GP23", "GP21"]
+            }
+        },
+        "soft_serial_pin":"GP1",
+        "transport":{
+            "protocol":"serial"
         }
     }
 }

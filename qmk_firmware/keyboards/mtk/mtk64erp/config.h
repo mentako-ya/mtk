@@ -20,21 +20,20 @@
 //#define NO_ACTION_ONESHOT
 
 // Key matrix parameters (duplex matrix)
-#define MATRIX_ROWS         (7 * 2)  // split keyboard
-#define MATRIX_COLS         (7)      // squared matrix
-#define MATRIX_ROW_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
-#define MATRIX_COL_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
+//#define MATRIX_ROWS         (7 * 2)  // split keyboard
+//#define MATRIX_COLS         (7)      // squared matrix
+//#define MATRIX_ROW_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
+//#define MATRIX_COL_PINS     { GP28, GP27, GP26, GP22, GP20, GP23, GP21}
 #define MATRIX_MASKED
 #define DEBOUNCE            5
 
 /* Rotary encoder */
-#ifdef ENCODER_ENABLE
-// #define ENCODERS_PAD_A { B6, B3 }
-// #define ENCODERS_PAD_B { B5, B2 }
-# define ENCODERS_PAD_A { GP27 }
-# define ENCODERS_PAD_B { GP26 }
-#define ENCODER_RESOLUTION 2
-#endif
+//#ifdef ENCODER_ENABLE
+//#define ENCODERS_PAD_A { GP6, GP8 }
+//#define ENCODERS_PAD_B { GP7, GP9 }
+//#define ENCODER_RESOLUTION 2
+//#define ENCODER_MAP_KEY_DELAY 10
+//#endif
 
 // Split parameters
 //#define SOFT_SERIAL_PIN         D2
@@ -46,6 +45,8 @@
 // #define SPLIT_USB_TIMEOUT       500
 // #define NO_SUSPEND_POWER_DOWN
 // #define USB_SUSPEND_WAKEUP_DELAY 200
+#define SPLIT_MAX_CONNECTION_ERRORS 10
+#define SPLIT_CONNECTION_CHECK_TIMEOUT 500
 
 //#define SPLIT_POINTING_ENABLE
 

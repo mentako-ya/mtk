@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "quantum.h"
 
 // clang-format off
-#define LAYOUT_mtk64erp( \
+#define LAYOUT( \
     L01, L02, L03, L04, L05, L06,              R06, R05, R04, R03, R02, R01, \
     L10, L12, L13, L14, L15, L16,              R16, R15, R14, R13, R12, R10, \
     L20, L21, L23, L24, L25, L26,              R26, R25, R24, R23, R21, R20, \
