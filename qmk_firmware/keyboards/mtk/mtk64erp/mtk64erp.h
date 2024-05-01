@@ -15,30 +15,30 @@ SPDX-License-Identifier: GPL-2.0-or-later
     L30, L31, L32, L34, L35, L36, L50,    R50, R36, R35, R34, R32, R31, R30, \
     L40, L41,                L51, L52,    R52, R51,                R41, R40, \
               L46,      L64,      L53,    R53,      R64,      R46,           \
-			E4L,E4R,  E3L,E3R,    L54,    R54,    E2L,E2R,  E1L,E1R          \
+			                      L54,    R54,                               \
+    L60, L61, L62,                                            R62, R61, R60 \
 	) \
     { \
-        { KC_NO,   L01,   L02,   L03,   L04,   L05,   L06 }, \
-        {   L10, KC_NO,   L12,   L13,   L14,   L15,   L16 }, \
-        {   L20,   L21, KC_NO,   L23,   L24,   L25,   L26 }, \
-        {   L30,   L31,   L32, KC_NO,   L34,   L35,   L36 }, \
-        {   L40,   L41, KC_NO, KC_NO, KC_NO, KC_NO,   L46 }, \
-        {   L50,   L51,   L52,   L53,   L54, KC_NO, KC_NO }, \
-        {   E4L,   E4R,   E3L,   E3R,   L64, KC_NO, KC_NO }, \
-        \
-        { KC_NO,   R01,   R02,   R03,   R04,   R05,   R06 }, \
-        {   R10, KC_NO,   R12,   R13,   R14,   R15,   R16 }, \
-        {   R20,   R21, KC_NO,   R23,   R24,   R25,   R26 }, \
-        {   R30,   R31,   R32, KC_NO,   R34,   R35,   R36 }, \
-        {   R40,   R41, KC_NO, KC_NO, KC_NO, KC_NO,   R46 }, \
-        {   R50,   R51,   R52,   R53,   R54, KC_NO, KC_NO }, \
-        {   E2L,   E2R,   E1L,   E1R ,  R64, KC_NO, KC_NO }, \
+        {   KC_NO, L01,   L02,   L03,   L04,   L05,   L06  }, \
+        {   L10,   KC_NO, L12,   L13,   L14,   L15,   L16  }, \
+        {   L20,   L21,   KC_NO, L23,   L24,   L25,   L26  }, \
+        {   L30,   L31,   L32,   KC_NO, L34,   L35,   L36  }, \
+        {   L40,   L41, KC_NO, KC_NO, KC_NO, KC_NO,   L46  }, \
+        {   L50,   L51,   L52,   L53,   L54, KC_NO, KC_NO  }, \
+        {   L60,   L61,   L62, KC_NO,   L64, KC_NO, KC_NO  }, \
+        {   KC_NO, R01,   R02,   R03,   R04,   R05,   R06  }, \
+        {   R10,   KC_NO, R12,   R13,   R14,   R15,   R16  }, \
+        {   R20,   R21, KC_NO,   R23,   R24,   R25,   R26  }, \
+        {   R30,   R31,   R32, KC_NO,   R34,   R35,   R36  }, \
+        {   R40,   R41, KC_NO, KC_NO, KC_NO, KC_NO,   R46  }, \
+        {   R50,   R51,   R52,   R53,   R54, KC_NO, KC_NO  }, \
+        {   R60,   R61,   R62,  KC_NO,  R64, KC_NO, KC_NO  } \
     }
 // clang-format on
 
 // enum cocot_keycodes {
 
-//     COCOT_SAFE_RANGE = SAFE_RANGE,
+//     COCOT_SAFE_RANGE = SAFE_RANGE,x
 //     CPI_SW,
 //     SCRL_SW,
 //     ROT_R15,
@@ -68,7 +68,8 @@ enum custom_keycodes {
     // In scroll mode, motion from primary trackball is treated as scroll
     // wheel.
     SCRL_TO,  // Toggle scroll mode
-    SCRL_MO,  // Momentary scroll mode
+    SCRL_MO,  // Momentary scroll mode[
+
     SCRL_DVI, // Increment scroll divider
     SCRL_DVD, // Decrement scroll divider
 
