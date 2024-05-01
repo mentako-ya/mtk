@@ -4,6 +4,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include QMK_KEYBOARD_H
+#ifdef CONSOLE_ENABLE
+#include <print.h>
+#endif
+
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -49,13 +53,34 @@ void pointing_device_init_kb(void) {
 
 // Contains report from sensor #0 already, need to merge in from sensor #1
 report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
-//    printf("heare is pointing_device_task_kb. ");
-    //pmw33xx_report_t report = pmw33xx_read_burst(0);
-    //uprintf("report.delta_x:%u, report.delta_y:%u) \n", report.delta_x, report.delta_x);
-    //uprintf("report.is_lifted:%u, report.is_motion:%u) \n", report.motion.b.is_lifted, report.motion.b.is_motion);
-    if (mouse_report.x != 0 || mouse_report.y != 0 || mouse_report.v !=0 || mouse_report.h != 0){
-        uprintf("mouse_report.x:%u, y:%u, v%u, h%u) \n", mouse_report.x, mouse_report.y, mouse_report.v, mouse_report.h);
-    }
+
     return pointing_device_task_user(mouse_report);
+}
+#endif
+
+#ifdef OLED_ENABLE
+
+bool oled_task_kb(void) {
+
+    if (!oled_task_user()) {
+        return false;
+    }
+
+    // Host Keyboard Layer Status
+    oled_write_ln_P(PSTR("mtk64erp"), true);
+    oled_write_ln_P(PSTR("Copylight 2024 mentako_ya"), false);
+    oled_write_ln_P(PSTR("SPDX-License-Identifier: GPL-2.0-or-later"), false);
+
+#   ifdef RGBLIGHT_ENABLE
+        oled_write_P(PSTR("RGB Mode: "), false);
+        oled_write_ln(get_u8_str(rgblight_get_mode(), ' '), false);
+        oled_write_P(PSTR("h: "), false);
+        oled_write(get_u8_str(rgblight_get_hue(), ' '), false);
+        oled_write_P(PSTR("s: "), false);
+        oled_write(get_u8_str(rgblight_get_sat(), ' '), false);
+        oled_write_P(PSTR("v: "), false);
+        oled_write_ln(get_u8_str(rgblight_get_val(), ' '), false);
+#   endif
+    return false;
 }
 #endif

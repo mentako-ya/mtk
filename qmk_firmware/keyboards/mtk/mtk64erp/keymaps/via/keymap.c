@@ -72,27 +72,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
-// #if defined(ENCODER_ENABLE)
-// bool encoder_update_user(uint8_t index, bool clockwise) {
-// 	    uprintf("hear is encoder_update_user index = %u clockwise = %u\n", index, clockwise);
-//     if (index == 0) { /* First encoder */
-//         if (clockwise) {
-//             tap_code(KC_PGDN);
-//         } else {
-//             tap_code(KC_PGUP);
-//         }
-//     } else if (index == 1) { /* Second encoder */
-//         if (clockwise) {
-//             tap_code(KC_DOWN);
-//         } else {
-//             tap_code(KC_UP);
-//         }
-//     }
-//     return false;
-// }
-// #endif
-
-
 void keyboard_post_init_user(void)
 {
 #if defined(CONSOLE_ENABLE)
@@ -108,6 +87,73 @@ void matrix_init_kb(void)
 {
 	debug_enable = true;
 	debug_matrix = true;
-	debug_mouse = true;
+}
+#endif
+
+#ifdef POINTING_DEVICE_ENABLE
+
+typedef union {
+  uint64_t raw;
+  struct {
+    int16_t x;
+    int16_t y;
+    int8_t v;
+    int8_t h;
+  };
+} user_mousereport_t;
+
+user_mousereport_t usr_ms_rep;
+
+void pointing_device_init_user(void) {
+
+    pmw33xx_init(0);         // index 1 is the second device.
+    pmw33xx_set_cpi(0, 1000); // applies to first sensor
+
+}
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    usr_ms_rep.x = mouse_report.x;
+    usr_ms_rep.y = mouse_report.y;
+    usr_ms_rep.v = mouse_report.v;
+    usr_ms_rep.h = mouse_report.h;
+
+    if (is_keyboard_left()) {
+        mouse_report.x = usr_ms_rep.y;
+        mouse_report.y = usr_ms_rep.x;
+    } else {
+        mouse_report.x = usr_ms_rep.y * -1;
+        mouse_report.y = usr_ms_rep.x * -1;
+    }
+
+    #ifdef CONSOLE_ENABLE
+    if (mouse_report.x != 0 || mouse_report.y != 0 || mouse_report.v !=0 || mouse_report.h != 0){
+        uprintf("mouse_report.x:%u, y:%u, v%u, h%u) \n", mouse_report.x, mouse_report.y, mouse_report.v, mouse_report.h);
+    }
+    #endif
+    return mouse_report;
+}
+#endif
+
+#ifdef OLED_ENABLE
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    if (is_keyboard_left()) {
+        return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+    }
+    return rotation;
+}
+
+bool oled_task_user(void) {
+    // Host Keyboard Layer Status
+    oled_write_P(PSTR("Layer:  "), false);
+    oled_write_ln_P(get_u8_str(get_highest_layer(layer_state), ' '), false);
+    oled_write_P(PSTR("MouseXY:"), false);
+    oled_write_P(get_u16_str(usr_ms_rep.x, ' '), false);
+    oled_write_ln_P(get_u16_str(usr_ms_rep.y, ' '), false);
+
+    oled_write_P(PSTR("ScrlVH: "), false);
+    oled_write_P(get_u16_str(usr_ms_rep.v, ' '), false);
+    oled_write_ln_P(get_u16_str(usr_ms_rep.h, ' '), false);
+
+    return false;
 }
 #endif
