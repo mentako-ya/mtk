@@ -52,13 +52,21 @@
 
 // Trackball  parameters
 #ifdef POINTING_DEVICE_ENABLE
+#    define SPI_DRIVER SPID1
 #    define SPI_SCK_PIN GP14
 #    define SPI_MISO_PIN GP12
 #    define SPI_MOSI_PIN GP15
-
-#    define POINTING_DEVICE_CS_PIN GP13
+#    define PMW33XX_CS_PIN GP13
 #    define PMW33XX_CPI 500
 #    define PMW33XX_CS_DIVISOR 64
+#    define PMW33XX_LIFTOFF_DISTANCE 0x04
+
+#    define POINTING_DEVICE_CS_PIN GP13
+#    define SPLIT_POINTING_ENABLE
+#    define POINTING_DEVICE_COMBINED
+//#    define ROTATIONAL_TRANSFORM_ANGLE  -25
+//#    define POINTING_DEVICE_INVERT_Y
+//#    define POINTING_DEVICE_TASK_THROTTLE_MS 1
 // // #    undef RP_SPI_USE_SPI0
 // // #    define RP_SPI_USE_SPI0 TRUE
 // // #    undef RP_SPI_USE_SPI1
@@ -81,13 +89,9 @@
 // #    define RP_SPI_USE_SPI0 FLASE
 // #    undef RP_SPI_USE_SPI1
 // #    define RP_SPI_USE_SPI1 TRUE
-#    define SPI_DRIVER SPID1
 
-#    define SPI_SCK_PIN GP14
-#    define SPI_MISO_PIN GP12
-#    define SPI_MOSI_PIN GP15
-#    define PMW33XX_CS_PIN GP13
-#    define POINTING_DEVICE_CS_PIN GP13
+
+
 // #    undef RP_SPI_USE_SPI0
 // #    define RP_SPI_USE_SPI0 FALSE
 // #    undef RP_SPI_USE_SPI1
