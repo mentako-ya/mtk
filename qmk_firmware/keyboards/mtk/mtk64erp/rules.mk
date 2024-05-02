@@ -22,7 +22,7 @@ RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 LTO_ENABLE = no
 
-OLED_ENABLE = yes
+# OLED_ENABLE = yes
 
 # Duplex matrix.
 # CUSTOM_MATRIX = lite
