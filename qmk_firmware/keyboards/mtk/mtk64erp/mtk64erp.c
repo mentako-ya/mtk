@@ -33,43 +33,76 @@ const matrix_row_t matrix_mask[MATRIX_ROWS] = {
 };
 // clang-format on
 
-// #ifdef ENCODER_ENABLE
-// bool encoder_update_kb(uint8_t index, bool clockwise) {
-//     uprintf("hear is encoder_update_kb index = %u clockwise = %u\n", index, clockwise);
-// 	if (!encoder_update_user(index, clockwise)) {
-// 		return false;
-// 	}
-//     return true;
-// }
-// #endif
-
 #ifdef POINTING_DEVICE_ENABLE
 void pointing_device_init_kb(void) {
-//    uprintf("hear is pointing_dev_init_kb to set pmw33xx_set_cpi(%u, %u) \n", 0, 1000);
+
     pmw33xx_init(0);         // index 1 is the second device.
     pmw33xx_set_cpi(0, 1000); // applies to first sensor
-    pointing_device_init_user();
+
 }
 
 // Contains report from sensor #0 already, need to merge in from sensor #1
-report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
+// report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
-    return pointing_device_task_user(mouse_report);
-}
+//     return mouse_report;
+
+// }
+
 #endif
 
 #ifdef OLED_ENABLE
+oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
+    if (is_keyboard_left()) {
+        return OLED_ROTATION_180;
+    }
+    return rotation;
+}
+
+char keylog_str[24] = {};
+
+const char code_to_name[60] = {
+    ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
+    'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+    'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+    'R', 'E', 'B', 'T', '_', '-', '=', '[', ']', '\\',
+    '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '};
+
+void set_keylog(uint16_t keycode, keyrecord_t *record) {
+    char name = ' ';
+    if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) ||
+        (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) {
+            keycode = keycode & 0xFF;
+    }
+
+    if (keycode < 60) {
+        name = code_to_name[keycode];
+    }
+
+  // update keylog
+  snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c",
+           record->event.key.row, record->event.key.col,
+           keycode, name);
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed) {
+    set_keylog(keycode, record);
+  }
+  return true;
+}
+
+void oled_render_keylog(void) {
+    oled_write(keylog_str, false);
+}
 
 bool oled_task_kb(void) {
 
-    if (!oled_task_user()) {
-        return false;
-    }
-
     // Host Keyboard Layer Status
-    oled_write_ln_P(PSTR("mtk64erp"), true);
-    oled_write_ln_P(PSTR("Copylight 2024 mentako_ya"), false);
-    oled_write_ln_P(PSTR("SPDX-License-Identifier: GPL-2.0-or-later"), false);
+    oled_write_P(PSTR("Layer:  "), false);
+    oled_write_ln_P(get_u8_str(get_highest_layer(layer_state), ' '), false);
+
+    oled_render_keylog();
 
 #   ifdef RGBLIGHT_ENABLE
         oled_write_P(PSTR("RGB Mode: "), false);
