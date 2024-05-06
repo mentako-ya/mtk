@@ -59,6 +59,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  ,            _______  ,            _______  ,                                                        _______  ,             _______ ,            _______
   ),
 
+  [4] = LAYOUT(
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+	  _______             , _______             ,
+	  _______             , _______             , _______  , _______  ,  _______ ,             _______ , _______  , _______  , _______  , _______  , _______  , _______  ,
+	  _______  , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______ ,             _______ ,            _______  ,             _______ ,
+                                                                       _______ ,             _______ ,
+    _______  ,            _______  ,            _______  ,                                                        _______  ,             _______ ,            _______
+  ),
+
+  [5] = LAYOUT(
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+	  _______             , _______             ,
+	  _______             , _______             , _______  , _______  ,  _______ ,             _______ , _______  , _______  , _______  , _______  , _______  , _______  ,
+	  _______  , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______ ,             _______ ,            _______  ,             _______ ,
+                                                                       _______ ,             _______ ,
+    _______  ,            _______  ,            _______  ,                                                        _______  ,             _______ ,            _______
+  ),
+
+  [6] = LAYOUT(
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+	  _______             , _______             ,
+	  _______             , _______             , _______  , _______  ,  _______ ,             _______ , _______  , _______  , _______  , _______  , _______  , _______  ,
+	  _______  , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______ ,             _______ ,            _______  ,             _______ ,
+                                                                       _______ ,             _______ ,
+    _______  ,            _______  ,            _______  ,                                                        _______  ,             _______ ,            _______
+  ),
+
+  [7] = LAYOUT(
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,                                  _______  , _______  , _______  , _______  , _______ , _______  ,
+	  _______             , _______             ,
+	  _______             , _______             , _______  , _______  ,  _______ ,             _______ , _______  , _______  , _______  , _______  , _______  , _______  ,
+	  _______  , _______  ,                       _______  , _______  ,                                  _______  , _______  ,                       _______  , _______  ,
+                          _______  ,            _______  ,             _______ ,             _______ ,            _______  ,             _______ ,
+                                                                       _______ ,             _______ ,
+    _______  ,            _______  ,            _______  ,                                                        _______  ,             _______ ,            _______
+  ),
+
 };
 // clang-format on
 
@@ -69,7 +117,68 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [1] = {ENCODER_CCW_CW(S(KC_TAB), KC_TAB)  , ENCODER_CCW_CW(KC_PGUP , KC_PGDN  ), ENCODER_CCW_CW(S(KC_TAB), KC_TAB)  , ENCODER_CCW_CW(KC_PGUP , KC_PGDN  )},
     [2] = {ENCODER_CCW_CW(KC_VOLU  , KC_VOLD) , ENCODER_CCW_CW(CPI_I100, CPI_D100 ), ENCODER_CCW_CW(KC_VOLU  , KC_VOLD) , ENCODER_CCW_CW(CPI_I100, CPI_D100 )},
     [3] = {ENCODER_CCW_CW(RGB_MOD  , RGB_RMOD), ENCODER_CCW_CW(RGB_HUI , RGB_HUD  ), ENCODER_CCW_CW(RGB_MOD  , RGB_RMOD), ENCODER_CCW_CW(RGB_HUI , RGB_HUD  )},
+    [4] = {ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  ), ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  )},
+    [5] = {ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  ), ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  )},
+    [6] = {ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  ), ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  )},
+    [7] = {ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  ), ENCODER_CCW_CW(KC_LEFT  , KC_RGHT) , ENCODER_CCW_CW(KC_UP   , KC_DOWN  )},
 };
+#endif
+
+#ifdef CONSOLE_ENABLE
+void matrix_init_kb(void)
+{
+	debug_enable = true;
+	debug_matrix = true;
+}
+#endif
+
+#ifdef RGBLIGHT_LAYERS
+const rgblight_segment_t PROGMEM rgb_layer_0[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_BLACK}
+);
+const rgblight_segment_t PROGMEM rgb_layer_1[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_GREEN}
+);
+const rgblight_segment_t PROGMEM rgb_layer_2[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_CYAN}
+);
+const rgblight_segment_t PROGMEM rgb_layer_3[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_BLUE}
+);
+const rgblight_segment_t PROGMEM rgb_layer_4[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_MAGENTA}
+);
+const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_RED}
+);
+const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_ORANGE}
+);
+const rgblight_segment_t PROGMEM rgb_layer_7[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, HSV_YELLOW}
+);
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    rgb_layer_0,
+    rgb_layer_1,
+    rgb_layer_2,
+    rgb_layer_3,
+    rgb_layer_4,
+    rgb_layer_5,
+    rgb_layer_6,
+    rgb_layer_7
+);
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+    rgblight_set_layer_state(2, layer_state_cmp(state, 2));
+    rgblight_set_layer_state(3, layer_state_cmp(state, 3));
+    rgblight_set_layer_state(4, layer_state_cmp(state, 4));
+    rgblight_set_layer_state(5, layer_state_cmp(state, 5));
+    rgblight_set_layer_state(6, layer_state_cmp(state, 6));
+    rgblight_set_layer_state(7, layer_state_cmp(state, 7));
+    return state;
+}
 #endif
 
 void keyboard_post_init_user(void)
@@ -80,12 +189,7 @@ void keyboard_post_init_user(void)
 #ifdef AUTO_MOUSE_LAYER_ENABLE
 	user_config.raw = eeconfig_read_user();
 #endif
-}
-
-#ifdef CONSOLE_ENABLE
-void matrix_init_kb(void)
-{
-	debug_enable = true;
-	debug_matrix = true;
-}
+#ifdef RGBLIGHT_LAYERS
+	 rgblight_layers = my_rgb_layers;
 #endif
+}

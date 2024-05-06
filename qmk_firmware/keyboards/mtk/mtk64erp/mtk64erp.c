@@ -80,7 +80,7 @@ void set_keylog(uint16_t keycode, keyrecord_t *record) {
     }
 
   // update keylog
-  snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c",
+  snprintf(keylog_str, sizeof(keylog_str), "c:%2d r:%2d k:%2d n:%c",
            record->event.key.row, record->event.key.col,
            keycode, name);
 }
@@ -93,13 +93,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void oled_render_keylog(void) {
-    oled_write(keylog_str, false);
+    oled_write_ln_P(keylog_str, false);
 }
 
 bool oled_task_kb(void) {
 
     // Host Keyboard Layer Status
-    oled_write_P(PSTR("Layer:  "), false);
+    oled_write_P(PSTR("Layer:"), false);
     oled_write_ln_P(get_u8_str(get_highest_layer(layer_state), ' '), false);
 
     oled_render_keylog();

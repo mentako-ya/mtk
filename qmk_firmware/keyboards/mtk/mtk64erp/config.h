@@ -3,6 +3,8 @@
 
 #pragma once
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
@@ -142,3 +144,13 @@
 #   define OLED_TIMEOUT 60000
 #   define OLED_BRIGHTNESS 128
 #endif
+
+ #ifdef RGBLIGHT_ENABLE
+   #define WS2812_DI_PIN GP0
+   #define RGBLIGHT_LAYERS
+   #define RGBLIGHT_ANIMATIONS
+   #undef RGBLED_NUM
+   #define RGBLED_NUM 12
+   #undef RGBLED_SPLIT
+   #define RGBLED_SPLIT { 6, 6 }
+ #endif
