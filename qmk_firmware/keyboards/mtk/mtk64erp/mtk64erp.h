@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
     L20, L21, L23, L24, L25, L26,              R26, R25, R24, R23, R21, R20, \
     L30, L31, L32, L34, L35, L36, L50,    R50, R36, R35, R34, R32, R31, R30, \
     L40, L41,                L51, L52,    R52, R51,                R41, R40, \
-              L46,      L64,      L53,    R53,      R64,      R46,           \
+              L42,      L43,      L53,    R53,      R43,      R42,           \
 			                      L54,    R54,                               \
          L60, L61, L62,                                  R62, R61, R60       \
 	) \
@@ -23,16 +23,16 @@ SPDX-License-Identifier: GPL-2.0-or-later
         {   L10,   KC_NO, L12,   L13,   L14,   L15,   L16  }, \
         {   L20,   L21,   KC_NO, L23,   L24,   L25,   L26  }, \
         {   L30,   L31,   L32,   KC_NO, L34,   L35,   L36  }, \
-        {   L40,   L41, KC_NO, KC_NO, KC_NO, KC_NO,   L46  }, \
+        {   L40,   L41,   L42,   L43, KC_NO, KC_NO, KC_NO  }, \
         {   L50,   L51,   L52,   L53,   L54, KC_NO, KC_NO  }, \
-        {   L60,   L61,   L62, KC_NO,   L64, KC_NO, KC_NO  }, \
+        {   L60,   L61,   L62, KC_NO, KC_NO, KC_NO, KC_NO  }, \
         {   KC_NO, R01,   R02,   R03,   R04,   R05,   R06  }, \
         {   R10,   KC_NO, R12,   R13,   R14,   R15,   R16  }, \
         {   R20,   R21, KC_NO,   R23,   R24,   R25,   R26  }, \
         {   R30,   R31,   R32, KC_NO,   R34,   R35,   R36  }, \
-        {   R40,   R41, KC_NO, KC_NO, KC_NO, KC_NO,   R46  }, \
+        {   R40,   R41,   R42,   R43, KC_NO, KC_NO, KC_NO  }, \
         {   R50,   R51,   R52,   R53,   R54, KC_NO, KC_NO  }, \
-        {   R60,   R61,   R62,  KC_NO,  R64, KC_NO, KC_NO  } \
+        {   R60,   R61,   R62, KC_NO, KC_NO, KC_NO, KC_NO  } \
     }
 // clang-format on
 
