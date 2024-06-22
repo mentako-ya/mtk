@@ -134,28 +134,36 @@ void matrix_init_kb(void)
 
 #ifdef RGBLIGHT_LAYERS
 const rgblight_segment_t PROGMEM rgb_layer_0[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_BLACK}
+    {0, 1, HSV_BLACK},
+    {7, 1, HSV_BLACK}
 );
 const rgblight_segment_t PROGMEM rgb_layer_1[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_GREEN}
+    {0, 1, HSV_GREEN},
+    {7, 1, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM rgb_layer_2[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_CYAN}
+    {0, 1, HSV_ORANGE},
+    {7, 1, HSV_ORANGE}
 );
 const rgblight_segment_t PROGMEM rgb_layer_3[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_BLUE}
+    {0, 1, HSV_PURPLE},
+    {7, 1, HSV_PURPLE}
 );
 const rgblight_segment_t PROGMEM rgb_layer_4[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_MAGENTA}
+    {0, 1, HSV_MAGENTA},
+    {7, 1, HSV_MAGENTA}
 );
 const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_RED}
+    {0, 1, HSV_RED},
+    {7, 1, HSV_RED}
 );
 const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_ORANGE}
+    {0, 1, HSV_BLUE},
+    {7, 1, HSV_BLUE}
 );
 const rgblight_segment_t PROGMEM rgb_layer_7[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_YELLOW}
+    {0, 1, HSV_YELLOW},
+    {7, 1, HSV_YELLOW}
 );
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_layer_0,

@@ -129,7 +129,7 @@
             "protocol":"serial"
         },
         "handedness":{
-            "matrix_grid": ["GP23", "GP21"]
+            "matrix_grid": ["GP21", "GP23"]
         }
     }
 }
